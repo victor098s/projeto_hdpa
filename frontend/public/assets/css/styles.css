@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --fonteFamilyBtn: "Poppins", sans-serif;
+  --fontWeightBtn: bold;
+  --fontSizeBtn: 24px;
+  --fontFamilyLabel: "Poppins", sans-serif;
+  --fontFamilyH2: "Poppins", sans-serif;
+  --fontFamilyPlaceHolderInput: "Poppins", sans-serif;
+  --fontSizeH2: 36px;
+   --colorPlaceHolderInput: #afafaf;
+  --colorH2: #afafaf;
+  --colorLabel: #afafaf;
+  --colorInputPlaceHolder: #afafaf;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  flex-direction: row;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.left {
+  max-width: 700px;
+  height: 100vh;
+  background-image: url("../img/login.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.right {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.LoginBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.alignLogo {
+  display: flex;
+  justify-content: left;
+  position: relative;
+  left: 5rem;
+}
+
+.logo img {
+  width: 259px;
+  height: auto;
+}
+
+.LoginBox h2 {
+  font-family: var(--fontFamilyH2);
+  color: var(--colorH2);
+  font-size: var(--fontSizeH2);
+  position: relative;
+  top: -2rem
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--fontFamilyLabel);
+  color: var(--colorLabel);
+  margin-bottom: 2rem;
+  
+}
+
+.inputImg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #afafaf;
+  border-radius: 20px;
+  position: relative;
+  width: 676px;
+}
+
+.input {
+  width: 90%;
+  height: 53px;
+  padding-left: 20px;
+  border: none;
+  box-sizing: border-box;
+}
+
+.input::placeholder {
+  font-family: var(--fontFamilyPlaceHolderInput);
+  color: var(--colorInputPlaceHolder);
+}
+
+.input:focus{
+    outline: none;
+}
+
+.inputImg img {
+  width: 28px;
+  height: auto;
+}
+
+.btnSubmit {
+  width: 266px;
+  height: 61px;
+  border-radius: 10px;
+  background-color: #0852f5;
+  color: #ffffff;
+  border: none;
+  font-family: var(--fonteFamilyBtn);
+  font-weight: var(--fontWeightBtn);
+  font-size: var(--fontSizeBtn);
+  margin-top: 5rem;
+  transition: background-color 0.3s;
+}
+
+.btnSubmit:hover {
+  background-color: #002980;
+}
