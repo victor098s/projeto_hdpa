@@ -1,0 +1,63 @@
+.container {
+  padding: 40px;
+}
+
+.container h1 {
+  color: #8f8f8f;
+  font-size: 32px;
+  margin-bottom: 25px;
+}
+
+.container h3 {
+  color: #0d4cff;
+  margin-bottom: 15px;
+}
+
+.card {
+  background: #f5f5f5;
+  border-radius: 25px;
+  padding: 30px;
+  max-width: 900px;
+}
+
+.card p {
+  color: #8f8f8f;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form label {
+  color: #0d4cff;
+  font-weight: 600;
+}
+
+.form select {
+  width: 280px;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  background: white;
+  color: #8f8f8f;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+}
+
+.footer button {
+  background: #0d4cff;
+  color: white;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
