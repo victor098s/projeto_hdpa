@@ -2,1106 +2,440 @@
    CONTAINER
 ========================================= */
 
-
-
-
 body {
   margin: 0;
-
-
-
-
   padding: 0;
-
-
-
-
   background: #f5f5f7;
-
-
-
-
-  font-family: 'Inter', sans-serif;
-
-
-
-
+  font-family: "Inter", sans-serif;
   overflow-x: hidden;
 }
-
-
-
 
 .container {
   width: 100%;
   min-height: 100vh;
 }
 
-
-
-
 /* =========================================
    HEADER
 ========================================= */
 
-
-
-
 .header {
   width: 100%;
   height: 92px;
-
-
-
-
   background: white;
-
-
-
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-
-
-
   padding: 0 42px;
 
-
-
-
   border-bottom: 1px solid #ececec;
-
-
-
 
   box-sizing: border-box;
 }
 
-
-
-
 /* =========================================
    LOGO
 ========================================= */
-
-
-
 
 .logoArea {
   display: flex;
   align-items: center;
 }
 
-
-
-
 .logoImage {
   width: 165px;
-
-
-
-
   height: auto;
-
-
-
-
   object-fit: contain;
-
-
-
-
   display: block;
 }
-
-
-
 
 /* =========================================
    MENU
 ========================================= */
 
-
-
-
 .menu {
   display: flex;
   align-items: center;
-
-
-
-
   gap: 90px;
 }
-
-
-
 
 .menuItem {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-
-
-
   gap: 8px;
-
-
-
-
   color: #b7b7b7;
-
-
-
-
   font-size: 15px;
-
-
-
-
   font-weight: 600;
-
-
-
-
   cursor: pointer;
-
-
-
-
   transition: 0.3s;
 }
-
-
-
 
 .menuItem:hover {
   color: #1554ff;
 }
 
-
-
-
 /* =========================================
    PERFIL
 ========================================= */
 
-
-
-
 .profileButton {
   width: 52px;
   height: 52px;
-
-
-
-
   border: none;
   border-radius: 50%;
-
-
-
-
   background: #f4f4f4;
   color: #b7b7b7;
-
-
-
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-
-
-
   cursor: pointer;
-
-
-
-
   transition: 0.3s;
 }
-
-
-
 
 .profileButton:hover {
   background: #1554ff;
   color: white;
 }
 
-
-
-
 /* =========================================
    HERO
 ========================================= */
 
-
-
-
 .hero {
   width: calc(100% - 120px);
-
-
-
-
   margin: 38px auto 0;
-
-
-
-
   display: flex;
   justify-content: center;
 }
 
-
-
-
 .heroImage {
   width: 82%;
-
-
-
-
   height: 260px;
-
-
-
-
   object-fit: cover;
-
-
-
-
   border-radius: 42px;
-
-
-
-
   display: block;
-
-
-
-
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
 }
-
-
-
 
 /* =========================================
    SECTION
 ========================================= */
 
-
-
-
 .section {
   width: calc(100% - 120px);
-
-
-
-
   margin: 42px auto 0;
 }
-
-
-
 
 /* =========================================
    TÍTULOS
 ========================================= */
 
-
-
-
 .section h2 {
   color: #8f8f8f;
-
-
-
-
   font-size: 30px;
-
-
-
-
   font-weight: 700;
-
-
-
-
   margin-bottom: 22px;
 }
-
-
-
 
 /* =========================================
    CAROUSEL
 ========================================= */
 
-
-
-
 .carouselWrapper {
   width: 100%;
-
-
-
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-
-
-
   gap: 22px;
 }
-
-
-
 
 .carousel {
   display: flex;
   align-items: center;
-
-
-
-
   gap: 26px;
 }
-
-
-
 
 .uniCard {
   width: 230px;
   height: 92px;
-
-
-
-
   background: #f4f4f4;
-
-
-
-
   border-radius: 34px;
-
-
-
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-
-
-
   flex-shrink: 0;
-
-
-
-
   cursor: pointer;
-
-
-
-
   transition: 0.3s;
-
-
-
-
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.02);
 }
 
-
-
-
 .uniCard:hover {
   transform: translateY(-4px);
-
-
-
-
   background: #f3f3f3;
 }
 
-
-
-
 .uniLogo {
   width: 200px;
-
-
-
-
   height: auto;
-
-
-
-
   object-fit: contain;
 }
-
-
-
 
 /* =========================================
    SETAS
 ========================================= */
 
-
-
-
 .arrowButton {
   width: 50px;
   height: 50px;
-
-
-
-
   min-width: 50px;
-
-
-
-
   border: none;
   border-radius: 50%;
-
-
-
-
   background: #f1f1f1;
   color: #b8b8b8;
-
-
-
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-
-
-
   cursor: pointer;
-
-
-
-
   transition: 0.3s;
-
-
-
-
   font-size: 22px;
 }
 
-
-
-
 .arrowButton:hover {
   background: #1554ff;
-
-
-
-
   color: white;
 }
-
-
-
 
 /* =========================================
    VISÃO GERAL
 ========================================= */
 
-
-
-
 .overview {
   display: flex;
-
-
-
-
   gap: 32px;
 }
 
-
-
-
 .card {
   flex: 1;
-
-
-
-
   background: white;
-
-
-
-
   border-radius: 40px;
-
-
-
-
   padding: 40px;
-
-
-
-
   height: 560px;
-
-
-
-
   width: 100%;
-
-
-
-
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
 }
 
-
-
-
 .card h3 {
   color: #9d9d9d;
-
-
-
-
   font-size: 24px;
-
-
-
-
   font-weight: 700;
-
-
-
-
   margin-bottom: 30px;
 }
-
-
-
 
 /* =========================================
    GRÁFICO PIZZA
 ========================================= */
 
-
-
-
 .pieChart {
   width: 280px;
   height: 280px;
-
-
-
-
   margin: 0 auto 30px;
-
-
-
-
   border-radius: 50%;
-
-
-
-
-  background: conic-gradient(
-    #1b2cff 0% 13%,
-    #4d6dff 13% 100%
-  );
+  background: conic-gradient(#1b2cff 0% 13%, #4d6dff 13% 100%);
 }
-
-
-
 
 /* =========================================
    PROGRESSOS
 ========================================= */
 
-
-
-
 .progressArea {
   display: flex;
   flex-direction: column;
-
-
-
-
   gap: 14px;
 }
 
-
-
-
 .progress {
   height: 46px;
-
-
-
-
   border-radius: 999px;
-
-
-
-
-  background: linear-gradient(
-    90deg,
-    #466dff,
-    #5a7cff
-  );
-
-
-
-
+  background: linear-gradient(90deg, #466dff, #5a7cff);
   color: white;
-
-
-
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-
-
-
   padding: 0 18px;
-
-
-
-
   font-size: 17px;
-
-
-
-
   font-weight: 700;
 }
 
-
-
-
 .progressDark {
-  background: linear-gradient(
-    90deg,
-    #2810d8,
-    #1200b7
-  );
+  background: linear-gradient(90deg, #2810d8, #1200b7);
 }
-
-
-
 
 /* =========================================
    BARRAS
 ========================================= */
 
-
-
-
 .barChart {
   display: flex;
   flex-direction: column;
-
-
-
-
   gap: 28px;
-
-
-
-
   margin-top: 46px;
 }
-
-
-
 
 .barRow {
   display: flex;
   align-items: center;
-
-
-
-
   gap: 18px;
 }
 
-
-
-
 .barRow span {
   width: 60px;
-
-
-
-
   color: #9b9b9b;
-
-
-
-
   font-size: 20px;
-
-
-
-
   font-weight: 700;
 }
 
-
-
-
 .bar {
   height: 42px;
-
-
-
-
   border-radius: 12px;
-
-
-
-
-  background: linear-gradient(
-    90deg,
-    #4f6fff,
-    #3f6bff
-  );
+  background: linear-gradient(90deg, #4f6fff, #3f6bff);
 }
-
-
-
 
 .bar1 {
   width: 100%;
 }
 
-
-
-
 .bar2 {
   width: 85%;
 }
-
-
-
 
 .bar3 {
   width: 66%;
 }
 
-
-
-
 .bar4 {
   width: 42%;
 }
-
-
-
 
 /* =========================================
    AVALIAÇÕES
 ========================================= */
 
-
-
-
 .reviewCard {
   background: white;
-
-
-
-
   border-radius: 40px;
-
-
-
-
   padding: 34px;
-
-
-
-
   display: flex;
-
-
-
-
   gap: 24px;
-
-
-
-
   align-items: flex-start;
-
-
-
-
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
 }
-
-
-
 
 .reviewCard img {
   width: 82px;
   height: 82px;
-
-
-
-
   border-radius: 50%;
-
-
-
-
   object-fit: cover;
 }
-
-
-
 
 .reviewContent {
   flex: 1;
 }
 
-
-
-
 .reviewTop {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-
-
-
   margin-bottom: 16px;
 }
 
-
-
-
 .reviewTop h4 {
   color: #8c8c8c;
-
-
-
-
   font-size: 25px;
-
-
-
-
   font-weight: 700;
 }
 
-
-
-
 .stars {
   color: #ffd400;
-
-
-
-
   font-size: 32px;
-
-
-
-
   letter-spacing: 5px;
 }
 
-
-
-
 .reviewContent p {
   color: #a1a1a1;
-
-
-
-
   font-size: 18px;
-
-
-
-
   line-height: 1.8;
 }
-
-
-
 
 /* =========================================
    FOOTER
 ========================================= */
 
-
-
-
 .footer {
   width: 100%;
   height: 90px;
-
-
-
-
   background: #1554ff;
-
-
-
-
   margin-top: 60px;
 }
-
-
-
 
 /* =========================================
    RESPONSIVO
 ========================================= */
 
-
-
-
 @media (max-width: 1200px) {
   .menu {
     gap: 32px;
   }
-
-
-
-
   .overview {
     flex-direction: column;
   }
-
-
-
-
   .carousel {
     gap: 16px;
   }
-
-
-
-
   .uniCard {
     width: 180px;
   }
 }
 
-
-
-
 @media (max-width: 900px) {
   .header {
     padding: 0 20px;
   }
-
-
-
-
   .menu {
     display: none;
   }
-
-
-
-
   .section,
   .hero {
     width: calc(100% - 40px);
   }
-
-
-
-
   .carouselWrapper {
     gap: 12px;
   }
-
-
-
-
   .carousel {
     gap: 12px;
   }
-
-
-
-
   .uniCard {
     width: 150px;
     height: 80px;
   }
-
-
-
-
   .uniLogo {
     width: 90px;
   }
-
-
-
-
   .overview {
     flex-direction: column;
   }
-
-
-
-
   .pieChart {
     width: 220px;
     height: 220px;
   }
-
-
-
-
   .reviewCard {
     flex-direction: column;
   }
-
-
-
-
   .reviewTop {
     flex-direction: column;
     align-items: flex-start;
-
-
-
-
     gap: 12px;
   }
 }
-
-
-
-
-

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Login.module.css";
 import "../../index.css";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/LOGO2.png";
 import emailImg from "../../assets/email.png";
 import senhaImg from "../../assets/padlock.png";
 import { Navigate, useNavigate } from "react-router-dom";
