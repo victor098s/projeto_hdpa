@@ -7,7 +7,7 @@ import banner from "../../assets/banner2.png";
 import enemLogo from "../../assets/enem.png";
 import uspLogo from "../../assets/usp.png";
 import unicampLogo from "../../assets/unicamp.png";
-// import unespLogo from '../../assets/unesp.png';
+import unespLogo from '../../assets/unesp.png';
 import pucLogo from "../../assets/puc.png";
 
 import tupiImage from "../../assets/tupi.png";
@@ -28,7 +28,7 @@ export default function Home() {
     { nome: "ENEM", logo: enemLogo },
     { nome: "USP", logo: uspLogo },
     { nome: "UNICAMP", logo: unicampLogo },
-    // { nome: 'UNESP', logo: unespLogo },
+    { nome: 'UNESP', logo: unespLogo },
     { nome: "PUC", logo: pucLogo },
   ];
 
