@@ -1,0 +1,39 @@
+.container {
+  background-color: #f3f3f3;
+}
+
+main {
+  padding-left: 5rem;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h2 {
+  color: #afafaf;
+}
+
+.uspImg {
+  width: 410px;
+  position: relative;
+  left: -5rem;
+}
+
+.escolasUniversitarias {
+  border-bottom: 1px solid #afafaf;
+  width: 85%;
+}
+
+.sectionText {
+  width: 1302px;
+  color: #858585;
+  font-size: 22;
+  margin-bottom: 5rem;
+}
+
+footer {
+  background-color: #0852f5;
+  height: 120px;
+  color: #0852f5;
+}
