@@ -26,14 +26,48 @@ h2 {
 }
 
 .sectionText {
-  width: 1302px;
+  width: 1200px;
   color: #858585;
   font-size: 22;
   margin-bottom: 5rem;
+}
+
+.sectionText p {
+  font-size: 16px;
+  line-height: 1.2;
+  color: #333333;
+  margin-bottom: 20px;
+  text-align: justify;
 }
 
 footer {
   background-color: #0852f5;
   height: 120px;
   color: #0852f5;
+}
+
+
+@media (max-width: 768px) {
+  main {
+    padding: 0px;
+    justify-content: left;
+    position: relative;
+    left: -4rem;
+  }
+
+  .sectionText {
+    padding: 0 1rem;
+  }
+
+  .enemImg {
+    left: -4rem;
+  }
+
+  .escolasUniversitarias{
+    width: 100%;
+  }
+
+  .footer{
+    height: 40px;
+  }
 }

@@ -21,44 +21,47 @@ function Puccamp() {
 
         <section className={styles.sectionText}>
           <p>
-A Pontifícia Universidade Católica de Campinas, conhecida como PUC-CAMP, é uma das instituições privadas de   <br></br>
-ensino superior mais tradicionais e reconhecidas do Brasil. Fundada em 1946, a universidade possui grande desta- <br></br>
-que nas áreas de Ciências Humanas, Direito, Comunicação, Psicologia, Administração e Tecnologia, sendo referência <br></br>
-pela qualidade de ensino e pela formação crítica e humanizada de seus estudantes.<br></br>
-<br></br>
+A Pontifícia Universidade Católica de Campinas, conhecida como PUC-CAMP, é uma das instituições privadas de   
+ensino superior mais tradicionais e reconhecidas do Brasil. Fundada em 1946, a universidade possui grande desta- 
+que nas áreas de Ciências Humanas, Direito, Comunicação, Psicologia, Administração e Tecnologia, sendo referência 
+pela qualidade de ensino e pela formação crítica e humanizada de seus estudantes.
+</p>
 
-Ao longo de sua história, a PUC-CAMP consolidou-se como uma universidade de grande importância acadêmica, cultural <br></br>
-e social, contribuindo para a formação de profissionais altamente qualificados e para o desenvolvimento do pensamento<br></br>
-crítico e científico no país. A instituição também é conhecida por incentivar debates, pesquisas e projetos voltados às<br></br>
-questões sociais, culturais e econômicas da sociedade brasileira.<br></br>
-<br></br>
+<p>
+Ao longo de sua história, a PUC-CAMP consolidou-se como uma universidade de grande importância acadêmica, cultural 
+e social, contribuindo para a formação de profissionais altamente qualificados e para o desenvolvimento do pensamento
+crítico e científico no país. A instituição também é conhecida por incentivar debates, pesquisas e projetos voltados às
+questões sociais, culturais e econômicas da sociedade brasileira.
+</p>
 
-Ingressar na PUC-CAMP é o objetivo de muitos estudantes que buscam uma formação de excelência em uma universidade <br></br>
-reconhecida nacionalmente. Apesar de ser uma instituição privada, diversos cursos apresentam alta concorrência, princi- <br></br>
-palmente Direito, Relações Internacionais, Psicologia e Comunicação Social. Dessa forma, os candidatos precisam <br></br>
-demonstrar bom desempenho acadêmico e preparação adequada para enfrentar os processos seletivos.<br></br>
-<br></br>
+<p>
+Ingressar na PUC-CAMP é o objetivo de muitos estudantes que buscam uma formação de excelência em uma universidade 
+reconhecida nacionalmente. Apesar de ser uma instituição privada, diversos cursos apresentam alta concorrência, princi- 
+palmente Direito, Relações Internacionais, Psicologia e Comunicação Social. Dessa forma, os candidatos precisam 
+demonstrar bom desempenho acadêmico e preparação adequada para enfrentar os processos seletivos.
+</p>
 
-O ingresso na universidade ocorre principalmente por meio do vestibular próprio, além da utilização da nota do ENEM  <br></br>
-em determinados cursos e programas de bolsas. A PUC-CAMP também oferece oportunidades de financiamento<br></br>
-estudantil e bolsas de estudo, permitindo que mais estudantes tenham acesso ao ensino superior de qualidade.<br></br>
-Ainda assim, a exigência acadêmica permanece elevada, refletindo o compromisso da instituição com a<br></br>
- excelência educacional.<br></br>
-<br></br>
+<p>
+O ingresso na universidade ocorre principalmente por meio do vestibular próprio, além da utilização da nota do ENEM  
+em determinados cursos e programas de bolsas. A PUC-CAMP também oferece oportunidades de financiamento
+estudantil e bolsas de estudo, permitindo que mais estudantes tenham acesso ao ensino superior de qualidade.
+Ainda assim, a exigência acadêmica permanece elevada, refletindo o compromisso da instituição com a
+</p>
 
+<p>
+Nesse contexto, conquistar uma vaga na PUC-CAMP representa uma importante realização acadêmica e pessoal. Para 
+muitos estudantes, estudar na universidade significa fazer parte de uma instituição tradicional, reconhecida pelo ambiente
+intelectual e pela formação diferenciada oferecida aos seus alunos. Além disso, a universidade proporciona  diversas
+oportunidades de desenvolvimento profissional, científico e cultural.
+</p>
 
-Nesse contexto, conquistar uma vaga na PUC-CAMP representa uma importante realização acadêmica e pessoal. Para <br></br>
-muitos estudantes, estudar na universidade significa fazer parte de uma instituição tradicional, reconhecida pelo ambiente<br></br>
-intelectual e pela formação diferenciada oferecida aos seus alunos. Além disso, a universidade proporciona  diversas <br></br>
-oportunidades de desenvolvimento profissional, científico e cultural.<br></br>
-<br></br>
-
-Assim, o ingresso na PUC-CAMP representa não apenas o acesso ao ensino superior, mastambém a oportunidade de construir <br></br>
-uma trajetória acadêmica sólida em uma das universidades privadas mais respeitadas do Brasil. A dedicação necessária para<br></br>
-alcançar esse objetivo torna a conquista ainda mais significativa para os estudantes aprovados.<br></br>
-
-            <br></br> 
-          </p>
+<p>
+Assim, o ingresso na PUC-CAMP representa não apenas o acesso ao ensino superior, mastambém a oportunidade de construir 
+uma trajetória acadêmica sólida em uma das universidades privadas mais respeitadas do Brasil. A dedicação necessária para
+alcançar esse objetivo torna a conquista ainda mais significativa para os estudantes aprovados.
+</p>
+     
+        
         </section>
       </main>
 

@@ -18,45 +18,47 @@ function Unicamp() {
 
         <section className={styles.sectionText}>
           <p>
-            A Universidade Estadual de Campinas, conhecida como Unicamp, é uma das instituições de ensino superior mais <br></br>
-             prestigiadas do Brasil, destacando-se principalmente pela excelência em pesquisa científica, inovação tecnológica e <br></br>
-              qualidade acadêmica. Fundada em 1966, a universidade está localizada em Campinas, no estado de São Paulo, <br></br>
-               e oferece diversos cursos de graduação, pós-graduação e programas de pesquisa em áreas como Saúde, Engenharia,<br></br>
-          Tecnologia, Ciências Humanas e Exatas.<br></br>
-          <br></br>
+            A Universidade Estadual de Campinas, conhecida como Unicamp, é uma das instituições de ensino superior mais 
+             prestigiadas do Brasil, destacando-se principalmente pela excelência em pesquisa científica, inovação tecnológica e 
+              qualidade acadêmica. Fundada em 1966, a universidade está localizada em Campinas, no estado de São Paulo, 
+               e oferece diversos cursos de graduação, pós-graduação e programas de pesquisa em áreas como Saúde, Engenharia,
+          </p>
 
-Ao longo de sua trajetória, a Unicamp consolidou-se como referência nacional e internacional em produção<br></br>
- científica, sendo responsável por importantes pesquisas e avanços tecnológicos que impactam diretamente a <br></br>
-  sociedade. A universidade também possui forte ligação com centros de inovação e empresas, incentivando o <br></br>
-   desenvolvimento científico, empreendedor e tecnológico de seus estudantes e pesquisadores.<br></br>
-  <br></br>
-            Ingressar na Unicamp é um grande objetivo para milhares de estudantes devido ao reconhecimento e à qualidade<br></br>
-             da instituição. Entretanto, o alto nível acadêmico da universidade está diretamente relacionado à intensa <br></br>
-              concorrência de seus cursos, especialmente Medicina, Engenharia, Ciência da Computação e Arquitetura, que<br></br>
-              apresentam elevada relação candidato por vaga. Esse cenário exige dos candidatos uma preparação aprofundada,<br></br>
+<p>
+Ao longo de sua trajetória, a Unicamp consolidou-se como referência nacional e internacional em produção
+ científica, sendo responsável por importantes pesquisas e avanços tecnológicos que impactam diretamente a 
+  sociedade. A universidade também possui forte ligação com centros de inovação e empresas, incentivando o 
+   desenvolvimento científico, empreendedor e tecnológico de seus estudantes e pesquisadores.
+  </p>
+
+  <p>
+            Ingressar na Unicamp é um grande objetivo para milhares de estudantes devido ao reconhecimento e à qualidade
+             da instituição. Entretanto, o alto nível acadêmico da universidade está diretamente relacionado à intensa 
+              concorrência de seus cursos, especialmente Medicina, Engenharia, Ciência da Computação e Arquitetura, que
+              apresentam elevada relação candidato por vaga. Esse cenário exige dos candidatos uma preparação aprofundada,
              domínio dos conteúdos escolares e grande capacidade de interpretação e raciocínio.
-  <br></br>
-    <br></br>
+  </p>
 
-            O principal processo seletivo da universidade é realizado pela Comissão Permanente para os Vestibulares, responsável por <br></br>
-            aplicar provas conhecidas pelo alto nível de dificuldade e pela valorização do pensamento crítico e interdisciplinaridade.<br></br>
-             Além do vestibular tradicional, a Unicamp também disponibiliza formas alternativas de ingresso, incluindo vagas destinadas <br></br>
+<p>
+            O principal processo seletivo da universidade é realizado pela Comissão Permanente para os Vestibulares, responsável por 
+            aplicar provas conhecidas pelo alto nível de dificuldade e pela valorização do pensamento crítico e interdisciplinaridade.
+             Além do vestibular tradicional, a Unicamp também disponibiliza formas alternativas de ingresso, incluindo vagas destinadas 
              ao ENEM e programas de inclusão social, ampliando o acesso ao ensino superior sem diminuir o rigor acadêmico exigido.
-  <br></br>
-    <br></br>
+ </p>
 
-            Nesse contexto, conquistar uma vaga na Unicamp representa muito mais do que apenas aprovação em um vestibular. <br></br>
-            Significa alcançar um objetivo construído com esforço, disciplina e dedicação aos estudos. Para muitos estudantes,<br></br>
-            essa conquista simboliza a realização de um sonho e a oportunidade de estudar em uma das universidades mais<br></br>
-              respeitadas do país, reconhecida por estimular a pesquisa, a criatividade e a formação de profissionais altamente <br></br>
+<p>
+            Nesse contexto, conquistar uma vaga na Unicamp representa muito mais do que apenas aprovação em um vestibular. 
+            Significa alcançar um objetivo construído com esforço, disciplina e dedicação aos estudos. Para muitos estudantes,
+            essa conquista simboliza a realização de um sonho e a oportunidade de estudar em uma das universidades mais
+              respeitadas do país, reconhecida por estimular a pesquisa, a criatividade e a formação de profissionais altamente 
                qualificados.
-  <br></br>
-    <br></br>
-
-            Assim, a dificuldade para ingressar na Unicamp não deve ser vista apenas como um desafio, mas também como um elemento<br></br>
-             que valoriza ainda mais a conquista dos estudantes aprovados. Fazer parte da universidade significa estar preparado para <br></br>
-            enfrentar uma formação acadêmica exigente e aproveitar as inúmeras oportunidades oferecidas pela instituição. <br></br>
-            <br></br> 
+        </p>
+  
+    <p>
+            Assim, a dificuldade para ingressar na Unicamp não deve ser vista apenas como um desafio, mas também como um elemento
+             que valoriza ainda mais a conquista dos estudantes aprovados. Fazer parte da universidade significa estar preparado para 
+            enfrentar uma formação acadêmica exigente e aproveitar as inúmeras oportunidades oferecidas pela instituição. 
+           
           </p>
         </section>
       </main>
