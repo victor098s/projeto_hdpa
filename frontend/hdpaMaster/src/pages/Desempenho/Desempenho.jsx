@@ -1,83 +1,98 @@
 import styles from "./Desempenho.module.css";
-
+import Header from "../../../components/Header/Header";
 export default function Desempenho() {
   return (
     <div className={styles.container}>
-      <h1>Meu Desempenho</h1>
+      <Header />
+      
+      <div className={styles.topBar}></div>
 
-      <div className={styles.cards}>
-        <div className={styles.card}>
-          <h3>TAXA DE ACERTOS</h3>
+      <div className={styles.content}>
+        <h1>Meu Desempenho</h1>
 
-          <div className={styles.circle}>
-            <span>57,14%</span>
-          </div>
+        <div className={styles.line}></div>
 
-          <div className={styles.info}>
-            <div>
-              <strong>336</strong>
-              <p>Questões Respondidas</p>
-            </div>
+        <div className={styles.cards}>
+          {/* Card 1 */}
+          <div className={styles.card}>
+            <h3>TAXA DE ACERTOS</h3>
 
-            <div>
-              <strong>192</strong>
-              <p>Acertos</p>
-            </div>
-          </div>
-        </div>
-
-        <div className={styles.card}>
-          <h3>GRÁFICO DE EVOLUÇÃO</h3>
-
-          <div className={styles.grafico}>
-            <div>
-              <span>ABR</span>
-              <div className={styles.bar}>
-                <div style={{ width: "100%" }} />
+            <div className={styles.card1Content}>
+              <div className={styles.circle}>
+                <span>57,14%</span>
               </div>
-            </div>
 
-            <div>
-              <span>MAR</span>
-              <div className={styles.bar}>
-                <div style={{ width: "85%" }} />
-              </div>
-            </div>
+              <div className={styles.info}>
+                <div className={styles.infoBox}>
+                  <strong>336</strong>
+                  <small>Questões Respondidas</small>
+                </div>
 
-            <div>
-              <span>FEV</span>
-              <div className={styles.bar}>
-                <div style={{ width: "65%" }} />
-              </div>
-            </div>
-
-            <div>
-              <span>JAN</span>
-              <div className={styles.bar}>
-                <div style={{ width: "40%" }} />
+                <div className={styles.infoBox}>
+                  <strong>192</strong>
+                  <small>Acertos</small>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div className={styles.card}>
-          <h3>ABRIL</h3>
+          {/* Card 2 */}
+          <div className={styles.card}>
+            <h3>GRÁFICO DE EVOLUÇÃO</h3>
 
-          <div className={styles.pizza}></div>
+            <div className={styles.chart}>
+              <div className={styles.row}>
+                <span>ABR</span>
+                <div className={styles.bar}>
+                  <div style={{ width: "100%" }}></div>
+                </div>
+              </div>
 
-          <div className={styles.legenda}>
-            <div className={styles.acertos}>
-              <span>ACERTOS</span>
-              <strong>87%</strong>
+              <div className={styles.row}>
+                <span>MAR</span>
+                <div className={styles.bar}>
+                  <div style={{ width: "88%" }}></div>
+                </div>
+              </div>
+
+              <div className={styles.row}>
+                <span>FEV</span>
+                <div className={styles.bar}>
+                  <div style={{ width: "68%" }}></div>
+                </div>
+              </div>
+
+              <div className={styles.row}>
+                <span>JAN</span>
+                <div className={styles.bar}>
+                  <div style={{ width: "42%" }}></div>
+                </div>
+              </div>
             </div>
+          </div>
 
-            <div className={styles.erros}>
-              <span>ERROS</span>
-              <strong>13%</strong>
+          {/* Card 3 */}
+          <div className={styles.card}>
+            <h3>ABRIL</h3>
+
+            <div className={styles.pie}></div>
+
+            <div className={styles.legend}>
+              <div className={styles.acertos}>
+                <span>ACERTOS</span>
+                <strong>87%</strong>
+              </div>
+
+              <div className={styles.erros}>
+                <span>ERROS</span>
+                <strong>13%</strong>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      <div className={styles.bottomBar}></div>
     </div>
   );
 }

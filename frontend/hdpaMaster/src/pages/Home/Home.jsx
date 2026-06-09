@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import styles from "./home.module.css";
 
 // CORREÇÃO: Adicionado o nome do arquivo 'LOGO2.png' ao final do caminho
@@ -64,10 +65,12 @@ export default function Home() {
             <span>Simulados</span>
           </div>
 
-          <div className={styles.menuItem}>
-            <BarChart3 size={24} />
-            <span>Meu Desempenho</span>
-          </div>
+          <Link to="/desempenho" className={styles.menuLink}>
+            <div className={styles.menuItem}>
+              <BarChart3 size={24} />
+              <span>Meu Desempenho</span>
+            </div>
+          </Link>
         </div>
 
         <button className={styles.profileButton}>
