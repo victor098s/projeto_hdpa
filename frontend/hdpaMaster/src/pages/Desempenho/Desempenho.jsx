@@ -1,10 +1,10 @@
 import styles from "./Desempenho.module.css";
-import Header from "../../../components/Header/Header";
+import Header from "../../components/Header/Header";
 export default function Desempenho() {
   return (
     <div className={styles.container}>
       <Header />
-      
+
       <div className={styles.topBar}></div>
 
       <div className={styles.content}>
