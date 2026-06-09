@@ -30,6 +30,7 @@
 }
 
   .menuToggle {
+    display: none;
     border: none;
     background-color: #ffffff;
   }
