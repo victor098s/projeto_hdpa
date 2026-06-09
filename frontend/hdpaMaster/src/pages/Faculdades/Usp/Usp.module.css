@@ -3,7 +3,6 @@
 }
 
 main {
-  padding-left: 5rem;
   margin-top: 2rem;
   display: flex;
   justify-content: center;
@@ -26,14 +25,47 @@ h2 {
 }
 
 .sectionText {
-  width: 1302px;
+  max-width: 1000px;
   color: #858585;
   font-size: 22;
   margin-bottom: 5rem;
+}
+
+.sectionText p {
+  font-size: 16px;
+  line-height: 1.2;
+  color: #333333;
+  margin-bottom: 20px;
+  text-align: justify;
 }
 
 footer {
   background-color: #0852f5;
   height: 120px;
   color: #0852f5;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 0px;
+    justify-content: left;
+    position: relative;
+    left: -4rem;
+  }
+
+  .sectionText {
+    padding: 0 1rem;
+  }
+
+  .uspImg {
+    left: -4rem;
+  }
+
+  .escolasUniversitarias{
+    width: 100%;
+  }
+
+  .footer{
+    height: 40px;
+  }
 }
