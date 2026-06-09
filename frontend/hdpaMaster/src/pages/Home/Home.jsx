@@ -9,6 +9,11 @@ import unicampLogo from "../../assets/unicamp.png";
 import unespLogo from '../../assets/Logo_Unesp.svg';
 import pucLogo from "../../assets/puc.png";
 import tupiImage from "../../assets/tupi.png";
+import Enem from "../Faculdades/Enem/Enem";
+import Usp from "../Faculdades/Usp/Usp";
+import Unicamp from "../Faculdades/Unicamp/Unicamp";
+import Unesp from "../Faculdades/Unesp/Unesp";
+import Puccamp from "../Faculdades/Puccamp/Puccamp";
 import {
   BookOpen,
   ClipboardPen,
@@ -91,8 +96,8 @@ export default function Home() {
 
           <div className={styles.carousel}>
             {visibleCards.map((university) => (
-              <div 
-                key={university.nome} 
+              <div
+                key={university.nome}
                 className={styles.uniCard}
                 onClick={() => handleUniversityClick(university.path)}
                 style={{ cursor: 'pointer' }}
