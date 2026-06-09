@@ -2,6 +2,7 @@ import logoImage from "../../assets/logo.png";
 import React from "react";
 import styles from "./Header.module.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import {
   BookOpen,
@@ -15,21 +16,21 @@ import {
 } from "lucide-react";
 
 function Header() {
-
-
   const [menuAberto, setMenuAberto] = useState(false);
 
   const menuToggle = () => {
     setMenuAberto(!menuAberto);
-  }
+  };
 
   return (
     <header className={styles.header}>
       <div className={styles.logoArea}>
-        <img src={logoImage} alt="Logo" className={styles.logoImage} />
+        <Link to="/home">
+          <img src={logoImage} alt="Logo" className={styles.logoImage} />
+        </Link>
       </div>
 
-      <div className={ menuAberto ? styles.menuAberto : styles.menu}>
+      <div className={menuAberto ? styles.menuAberto : styles.menu}>
         <div className={styles.menuItem}>
           <BookOpen size={24} />
           <span>Banco de Questões</span>
@@ -50,11 +51,9 @@ function Header() {
         <UserCircle2 size={34} />
       </button>
 
-
-    <button className={styles.menuToggle} onClick={menuToggle}>
-      {menuAberto ? <X size={24} /> : <Menu size={24} />}
-    </button>
-
+      <button className={styles.menuToggle} onClick={menuToggle}>
+        {menuAberto ? <X size={24} /> : <Menu size={24} />}
+      </button>
     </header>
   );
 }
