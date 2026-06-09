@@ -29,6 +29,11 @@
   gap: 90px;
 }
 
+  .menuToggle {
+    border: none;
+    background-color: #ffffff;
+  }
+
 .menuItem {
   display: flex;
   flex-direction: column;
