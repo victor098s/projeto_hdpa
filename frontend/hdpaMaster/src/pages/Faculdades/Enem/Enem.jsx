@@ -4,6 +4,7 @@ import Header from "../../../components/Header/Header";
 import Menu from "../../../components/Menu/Menu";
 import enemImg from "../../../assets/enem.png";
 
+// Declaração do componente funcional Enem (uma página puramente informativa/estática)
 function Enem() {
   return (
     <div className={styles.container}>
