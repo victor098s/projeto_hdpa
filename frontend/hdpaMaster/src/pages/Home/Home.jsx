@@ -13,6 +13,8 @@ import Usp from "../Faculdades/Usp/Usp";
 import Unicamp from "../Faculdades/Unicamp/Unicamp";
 import Unesp from "../Faculdades/Unesp/Unesp";
 import Puccamp from "../Faculdades/Puccamp/Puccamp";
+import Header from "../../components/Header/Header";
+import { useNavigate, Link } from "react-router-dom";
 import {
   BookOpen,
   ClipboardPen,

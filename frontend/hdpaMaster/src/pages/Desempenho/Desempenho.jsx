@@ -1,5 +1,6 @@
 import styles from "./Desempenho.module.css";
 import Header from "../../components/Header/Header";
+import { useNavigate, Link } from "react-router-dom";
 export default function Desempenho() {
   return (
     <div className={styles.container}>
