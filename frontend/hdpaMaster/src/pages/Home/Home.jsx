@@ -6,7 +6,7 @@ import banner from "../../assets/banner2.png";
 import enemLogo from "../../assets/enem.png";
 import uspLogo from "../../assets/usp.png";
 import unicampLogo from "../../assets/unicamp.png";
-import unespLogo from '../../assets/Logo_Unesp.svg';
+import unespLogo from "../../assets/Logo_Unesp.svg";
 import pucLogo from "../../assets/puc.png";
 import tupiImage from "../../assets/tupi.png";
 import Enem from "../Faculdades/Enem/Enem";
@@ -23,6 +23,8 @@ import {
   ChevronRight,
 } from "lucide-react";
 
+import BQ from "../BancoDeQuestoes/BQ";
+
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const navigate = useNavigate();
@@ -31,11 +33,15 @@ export default function Home() {
     { nome: "ENEM", logo: enemLogo, path: "/enem" },
     { nome: "USP", logo: uspLogo, path: "/usp" },
     { nome: "UNICAMP", logo: unicampLogo, path: "/unicamp" },
-    { nome: 'UNESP', logo: unespLogo, path: "/unesp" },
+    { nome: "UNESP", logo: unespLogo, path: "/unesp" },
     { nome: "PUC", logo: pucLogo, path: "/puccamp" },
   ];
 
   const visibleCards = universityCards.slice(currentSlide, currentSlide + 3);
+
+  const BQ = () => {
+    navigate("/bq");
+  };
 
   const nextSlide = () => {
     if (currentSlide < universityCards.length - 3) {
@@ -63,7 +69,7 @@ export default function Home() {
         <div className={styles.menu}>
           <div className={styles.menuItem}>
             <BookOpen size={24} />
-            <span>Banco de Questões</span>
+            <span onClick={BQ}>Banco de Questões</span>
           </div>
 
           <div className={styles.menuItem}>
@@ -100,7 +106,7 @@ export default function Home() {
                 key={university.nome}
                 className={styles.uniCard}
                 onClick={() => handleUniversityClick(university.path)}
-                style={{ cursor: 'pointer' }}
+                style={{ cursor: "pointer" }}
               >
                 <img
                   src={university.logo}
