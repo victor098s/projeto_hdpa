@@ -1,0 +1,243 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: #f6f6f6;
+}
+
+.topBar {
+  height: 38px;
+  background: #ececec;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 70px 50px;
+}
+
+.content h1 {
+  color: #ababab;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background: #d5d5d5;
+  margin-bottom: 60px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+  width: 260px;
+  height: 210px;
+  background: #efefef;
+  border-radius: 20px;
+  padding: 14px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.card h3 {
+  color: #0d4cff;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* =========================
+   CARD 1
+========================= */
+
+.card1Content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 140px;
+}
+
+.circle {
+  width: 95px;
+  height: 95px;
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      closest-side,
+      #efefef 88%,
+      transparent 89%
+    ),
+    conic-gradient(
+      #0d4cff 57%,
+      #c7c7c7 0
+    );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle span {
+  color: #0d4cff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.info {
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.infoBox {
+  width: 80px;
+  height: 40px;
+
+  background: #f8f8f8;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.infoBox strong {
+  font-size: 12px;
+  color: #707070;
+}
+
+.infoBox small {
+  font-size: 7px;
+  color: #b3b3b3;
+  text-align: center;
+}
+
+/* =========================
+   CARD 2
+========================= */
+
+.chart {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.row span {
+  width: 35px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #a4a4a4;
+}
+
+.bar {
+  width: 145px;
+  height: 28px;
+}
+
+.bar div {
+  height: 100%;
+  background: #4f73f8;
+  border-radius: 4px;
+}
+
+/* =========================
+   CARD 3
+========================= */
+
+.pie {
+  width: 110px;
+  height: 110px;
+
+  margin: 0 auto 10px auto;
+
+  border-radius: 50%;
+
+  background:
+    conic-gradient(
+      #1c23d8 0deg 47deg,
+      #506aff 47deg 360deg
+    );
+}
+
+.legend {
+  width: 100%;
+}
+
+.acertos,
+.erros {
+  width: 150px;
+  height: 18px;
+
+  margin: 5px auto;
+
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 8px;
+
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+
+  box-sizing: border-box;
+}
+
+.acertos {
+  background: #506aff;
+}
+
+.erros {
+  background: #1707c5;
+}
+
+/* =========================
+   BARRA INFERIOR
+========================= */
+
+.bottomBar {
+  width: 100%;
+  height: 80px;
+  background: #0d4cff;
+  margin-top: 70px;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 1000px) {
+  .cards {
+    justify-content: center;
+  }
+
+  .content {
+    padding: 50px 20px;
+  }
+}

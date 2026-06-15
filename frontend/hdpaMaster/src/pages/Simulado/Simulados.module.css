@@ -1,0 +1,95 @@
+.container {
+  padding: 40px;
+}
+
+.container h1 {
+  color: #8f8f8f;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: #f5f5f5;
+  border-radius: 25px;
+  padding: 35px;
+  max-width: 1000px;
+}
+
+.card h2 {
+  color: #0d4cff;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.texto {
+  color: #8f8f8f;
+  line-height: 1.7;
+  max-width: 850px;
+  margin-bottom: 30px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form label {
+  color: #0d4cff;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.select {
+  width: 300px;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 25px;
+  background: white;
+  color: #8f8f8f;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+}
+
+.button {
+  background: #0d4cff;
+  color: white;
+  border: none;
+  padding: 12px 50px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .select {
+    width: 100%;
+  }
+
+  .buttonContainer {
+    justify-content: center;
+  }
+
+  .button {
+    width: 100%;
+  }
+}

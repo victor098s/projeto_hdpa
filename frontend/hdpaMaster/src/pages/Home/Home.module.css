@@ -77,6 +77,11 @@ body {
   color: #1554ff;
 }
 
+.menuLink {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* =========================================
    PERFIL
 ========================================= */

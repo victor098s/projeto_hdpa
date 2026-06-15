@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import styles from "./home.module.css";
 import logoImage from "../../assets/logo.png";
 import banner from "../../assets/banner2.png";
@@ -14,6 +13,8 @@ import Usp from "../Faculdades/Usp/Usp";
 import Unicamp from "../Faculdades/Unicamp/Unicamp";
 import Unesp from "../Faculdades/Unesp/Unesp";
 import Puccamp from "../Faculdades/Puccamp/Puccamp";
+import Header from "../../components/Header/Header";
+import { useNavigate, Link } from "react-router-dom";
 import {
   BookOpen,
   ClipboardPen,
@@ -77,10 +78,12 @@ export default function Home() {
             <span>Simulados</span>
           </div>
 
-          <div className={styles.menuItem}>
-            <BarChart3 size={24} />
-            <span>Meu Desempenho</span>
-          </div>
+          <Link to="/desempenho" className={styles.menuLink}>
+            <div className={styles.menuItem}>
+              <BarChart3 size={24} />
+              <span>Meu Desempenho</span>
+            </div>
+          </Link>
         </div>
 
         <button className={styles.profileButton}>

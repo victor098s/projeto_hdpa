@@ -8,6 +8,7 @@ import Puccamp from "./pages/Faculdades/Puccamp/Puccamp";
 import Unicamp from "./pages/Faculdades/Unicamp/Unicamp";
 import Usp from "./pages/Faculdades/Usp/Usp";
 import BQ from "./pages/BancoDeQuestoes/BQ";
+import Desempenho from "./pages/Desempenho/Desempenho";
 function App() {
   return (
     <Router>
@@ -20,6 +21,7 @@ function App() {
         <Route path="/unesp" element={<Unesp />} />
         <Route path="/puccamp" element={<Puccamp />} />
         <Route path="/bq" element={<BQ />} />
+        <Route path="/desempenho" element={<Desempenho />} />
       </Routes>
     </Router>
   );
