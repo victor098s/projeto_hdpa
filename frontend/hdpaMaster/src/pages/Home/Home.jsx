@@ -10,6 +10,7 @@ import unespLogo from "../../assets/Logo_Unesp.svg";
 import pucLogo from "../../assets/puc.png";
 import tupiImage from "../../assets/tupi.png";
 import pdfSimulado from "../../assets/SIMULADOS.pdf";
+import manualDoUsuario from "../../assets/MANUAL DO USUÁRIO.pdf";
 import {
   BookOpen,
   ClipboardPen,
@@ -22,7 +23,9 @@ import {
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 900);
+  const [perfilAberto, setPerfilAberto] = useState(false);
   const navigate = useNavigate();
+
 
   const universityCards = [
     { nome: "ENEM", logo: enemLogo, path: "/enem" },
@@ -48,6 +51,11 @@ export default function Home() {
 
   const irParaSimulado = () => {
     window.open(pdfSimulado, "_blank", "noopener,noreferrer");
+  };
+
+  const abrirManualDoUsuario = () => {
+    window.open(manualDoUsuario, "_blank", "noopener,noreferrer");
+    setPerfilAberto(false);
   };
 
   const nextSlide = () => {
@@ -104,9 +112,24 @@ export default function Home() {
           </div>
         </div>
 
-        <button className={styles.profileButton}>
-          <UserCircle2 size={34} />
-        </button>
+        <div className={styles.profileArea}>
+          <button
+            className={styles.profileButton}
+            type="button"
+            onClick={() => setPerfilAberto((aberto) => !aberto)}
+          >
+            <UserCircle2 size={34} />
+          </button>
+
+          {perfilAberto && (
+            <div className={styles.profileBox}>
+              <span>Perfil</span>
+              <button type="button" onClick={abrirManualDoUsuario}>
+                Manual do Usuário
+              </button>
+            </div>
+          )}
+        </div>
       </header>
 
       <section className={styles.hero}>

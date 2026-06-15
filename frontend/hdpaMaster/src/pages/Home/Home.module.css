@@ -35,6 +35,31 @@ body {
   box-sizing: border-box;
 }
 
+.profileBox {
+  background: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  border-radius: 8px;
+  transition: 0.2s ease-in-out;
+}
+
+.profileArea {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative; /* necessário para posicionar o dropdown (.profileBox) */
+}
+
+.profileBox button {
+  border: none;
+  color: #ffffff;
+  background: #0852f5;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
 /* =========================================
    LOGO
 ========================================= */
@@ -98,6 +123,15 @@ body {
 .profileButton:hover {
   background: #1554ff;
   color: white;
+}
+
+/* Posiciona a caixa de perfil como um dropdown abaixo do botão */
+.profileArea .profileBox {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 30;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
 /* =========================================
@@ -454,6 +488,5 @@ body {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
-
   }
 }
