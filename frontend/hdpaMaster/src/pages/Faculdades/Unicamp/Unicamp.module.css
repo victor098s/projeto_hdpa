@@ -1,43 +1,40 @@
-.containerUsp {
+.container {
   background-color: #f3f3f3;
 }
 
-.sectionContentUsp {
+main {
+  padding-left: 5rem;
   margin-top: 2rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 0 1rem;
 }
 
 h2 {
   color: #afafaf;
 }
 
-.uspImg {
+.unicampImg {
   width: 320px;
   position: relative;
-  left: -4rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  margin-left: 4rem;
+  left: -6.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
-.escolasUniversitariasUsp {
+.escolasUniversitarias {
   border-bottom: 1px solid #afafaf;
   width: 85%;
-  margin-left: 4rem;
 }
 
-.sectionTextUsp {
-  max-width: 1200px;
+.sectionText {
+  width: 1200px;
   color: #858585;
   font-size: 22;
-  margin-bottom: 3rem;
-  margin-left: 4rem;
+  margin-bottom: 5rem;
 }
 
-.sectionTextUsp p {
+.sectionText p {
   font-size: 16px;
   line-height: 1.2;
   color: #333333;
@@ -45,36 +42,37 @@ h2 {
   text-align: justify;
 }
 
-.footerUsp {
+footer {
   background-color: #0852f5;
   height: 120px;
   color: #0852f5;
 }
 
 @media (max-width: 768px) {
-  .sectionContentUsp {
-    max-width: 768px;
-    justify-content: center;
-    align-items: center;
+  main {
+    padding: 0px;
+    justify-content: left;
+    position: relative;
+    left: -4rem;
   }
 
-  .sectionTextUsp {
+  .sectionText {
     padding: 0 1rem;
     max-width: 350px;
     justify-content: center;
-    margin-left: -0.5rem;
+  margin-left: 5rem;
   }
 
-  .uspImg {
-    left: -7rem;
+  .unicampImg {
+    left: -1rem;
   }
 
-  .escolasUniversitariasUsp {
-    width: 90%;
-    margin-left: -1rem;
+  .escolasUniversitarias{
+   width: 90%;
+    margin-left: 5.5rem;
   }
 
-  .footerUsp {
+  .footer{
     height: 40px;
   }
 }

@@ -1,27 +1,15 @@
-
-/* =========================================
-   HEADER
-========================================= */
-
 .header {
   width: 100%;
   height: 92px;
   background: white;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 0 42px;
-
   border-bottom: 1px solid #ececec;
-
   box-sizing: border-box;
+  position: relative;
 }
-
-/* =========================================
-   LOGO
-========================================= */
 
 .logoArea {
   display: flex;
@@ -35,14 +23,16 @@
   display: block;
 }
 
-/* =========================================
-   MENU
-========================================= */
-
 .menu {
   display: flex;
   align-items: center;
   gap: 90px;
+}
+
+.menuToggle {
+  display: none;
+  border: none;
+  background-color: #ffffff;
 }
 
 .menuItem {
@@ -62,6 +52,7 @@
 }
 
 .profileButton {
+  display: flex;
   width: 52px;
   height: 52px;
   border: none;
@@ -78,4 +69,49 @@
 .profileButton:hover {
   background: #1554ff;
   color: white;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 20px 0px 0px;
+  }
+
+  .menu {
+    display: none;
+    z-index: 3;
+  }
+
+  .menuToggle {
+    display: flex;
+    border: none;
+    background-color: #ffffff;
+  }
+  .profileButton {
+    display: none;
+  }
+
+  .menuAberto {
+    background-color: white;
+    padding: 1rem;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2rem;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    height: 988px;
+    box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+
+  .logoImage {
+    width: 152px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
 }

@@ -1,0 +1,78 @@
+.container {
+  background-color: #f3f3f3;
+}
+
+main {
+  padding-left: 5rem;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h2 {
+  color: #afafaf;
+}
+
+.unespImg {
+  width: 240px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  
+}
+
+.escolasUniversitarias {
+  border-bottom: 1px solid #afafaf;
+  width: 85%;
+}
+
+.sectionText {
+  width: 1200px;
+  color: #858585;
+  font-size: 22;
+  margin-bottom: 5rem;
+}
+
+.sectionText p {
+  font-size: 16px;
+  line-height: 1.2;
+  color: #333333;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+footer {
+  background-color: #0852f5;
+  height: 120px;
+  color: #0852f5;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 0px;
+    justify-content: left;
+    position: relative;
+    left: -4rem;
+  }
+
+  .sectionText {
+    padding: 0 1rem;
+    max-width: 350px;
+    justify-content: center;
+  margin-left: 5rem;
+  }
+
+  .unespImg {
+    left: 5.5rem;
+  }
+
+  .escolasUniversitarias{
+  width: 90%;
+    margin-left: 5.5rem;
+  }
+
+  .footer{
+    height: 40px;
+  }
+}

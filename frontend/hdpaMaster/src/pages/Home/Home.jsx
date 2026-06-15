@@ -1,18 +1,18 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import styles from "./home.module.css";
-
-// CORREÇÃO: Adicionado o nome do arquivo 'LOGO2.png' ao final do caminho
-import logoImage from "../../assets/LOGO2.png";
+import logoImage from "../../assets/logo.png";
 import banner from "../../assets/banner2.png";
 import enemLogo from "../../assets/enem.png";
 import uspLogo from "../../assets/usp.png";
 import unicampLogo from "../../assets/unicamp.png";
-import unespLogo from '../../assets/Logo_Unesp.svg';
+import unespLogo from "../../assets/Logo_Unesp.svg";
 import pucLogo from "../../assets/puc.png";
-
 import tupiImage from "../../assets/tupi.png";
-
+import Enem from "../Faculdades/Enem/Enem";
+import Usp from "../Faculdades/Usp/Usp";
+import Unicamp from "../Faculdades/Unicamp/Unicamp";
+import Unesp from "../Faculdades/Unesp/Unesp";
+import Puccamp from "../Faculdades/Puccamp/Puccamp";
 import {
   BookOpen,
   ClipboardPen,
@@ -22,18 +22,25 @@ import {
   ChevronRight,
 } from "lucide-react";
 
+import BQ from "../BancoDeQuestoes/BQ";
+
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate();
 
   const universityCards = [
-    { nome: "ENEM", logo: enemLogo },
-    { nome: "USP", logo: uspLogo },
-    { nome: "UNICAMP", logo: unicampLogo },
-    { nome: 'UNESP', logo: unespLogo },
-    { nome: "PUC", logo: pucLogo },
+    { nome: "ENEM", logo: enemLogo, path: "/enem" },
+    { nome: "USP", logo: uspLogo, path: "/usp" },
+    { nome: "UNICAMP", logo: unicampLogo, path: "/unicamp" },
+    { nome: "UNESP", logo: unespLogo, path: "/unesp" },
+    { nome: "PUC", logo: pucLogo, path: "/puccamp" },
   ];
 
   const visibleCards = universityCards.slice(currentSlide, currentSlide + 3);
+
+  const BQ = () => {
+    navigate("/bq");
+  };
 
   const nextSlide = () => {
     if (currentSlide < universityCards.length - 3) {
@@ -47,6 +54,10 @@ export default function Home() {
     }
   };
 
+  const handleUniversityClick = (path) => {
+    navigate(path);
+  };
+
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -57,7 +68,7 @@ export default function Home() {
         <div className={styles.menu}>
           <div className={styles.menuItem}>
             <BookOpen size={24} />
-            <span>Banco de Questões</span>
+            <span onClick={BQ}>Banco de Questões</span>
           </div>
 
           <div className={styles.menuItem}>
@@ -92,7 +103,12 @@ export default function Home() {
 
           <div className={styles.carousel}>
             {visibleCards.map((university) => (
-              <div key={university.nome} className={styles.uniCard}>
+              <div
+                key={university.nome}
+                className={styles.uniCard}
+                onClick={() => handleUniversityClick(university.path)}
+                style={{ cursor: "pointer" }}
+              >
                 <img
                   src={university.logo}
                   alt={university.nome}

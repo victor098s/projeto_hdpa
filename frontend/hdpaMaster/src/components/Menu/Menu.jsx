@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./Menu.module.css";
-import Usp from "../../pages/faculdades/usp/Usp";
-import { BrowserRouter, Route, Routes, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Menu() {
   return (
@@ -19,7 +18,7 @@ function Menu() {
         <NavLink to="/unesp">
           <p className="textMenu">UNESP</p>
         </NavLink>
-        <NavLink to="/puc">
+        <NavLink to="/puccamp">
           <p className="textMenu">PUC</p>
         </NavLink>
       </div>
