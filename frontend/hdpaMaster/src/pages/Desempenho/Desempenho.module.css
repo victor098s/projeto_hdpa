@@ -2,6 +2,10 @@
   width: 100%;
   min-height: 100vh;
   background: #f6f6f6;
+
+  /* Faz o footer ficar no final da página */
+  display: flex;
+  flex-direction: column;
 }
 
 .topBar {
@@ -13,6 +17,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 70px 50px;
+  flex: 1;
 }
 
 .content h1 {
@@ -74,7 +79,6 @@
   width: 95px;
   height: 95px;
   flex-shrink: 0;
-
   border-radius: 50%;
 
   background:
@@ -109,7 +113,6 @@
 .infoBox {
   width: 80px;
   height: 40px;
-
   background: #f8f8f8;
   border-radius: 10px;
 
@@ -171,9 +174,7 @@
 .pie {
   width: 110px;
   height: 110px;
-
   margin: 0 auto 10px auto;
-
   border-radius: 50%;
 
   background:
@@ -191,9 +192,7 @@
 .erros {
   width: 150px;
   height: 18px;
-
   margin: 5px auto;
-
   border-radius: 20px;
 
   display: flex;
@@ -218,14 +217,30 @@
 }
 
 /* =========================
-   BARRA INFERIOR
+   FOOTER MELHORADO
 ========================= */
 
 .bottomBar {
   width: 100%;
-  height: 80px;
-  background: #0d4cff;
-  margin-top: 70px;
+  height: 90px;
+
+  background: linear-gradient(
+    90deg,
+    #0d4cff,
+    #2b63ff
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+
+  box-shadow: 0 -4px 12px rgba(13, 76, 255, 0.25);
+
+  margin-top: auto;
 }
 
 /* =========================
