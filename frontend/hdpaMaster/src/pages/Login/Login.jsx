@@ -1,17 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Login.module.css";
 import "../../index.css";
 import logo from "../../assets/logo.png";
 import emailImg from "../../assets/email.png";
 import senhaImg from "../../assets/padlock.png";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { getToken, isTokenExpired, setToken } from "../../utils/auth";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = getToken();
+    if (token && !isTokenExpired(token)) {
+      navigate("/home", { replace: true });
+    }
+  }, [navigate]);
 
   async function handleLogin(event) {
     event.preventDefault();
@@ -30,12 +36,12 @@ function Login() {
 
       if (!response.ok) {
         const data = await response.json();
-        throw new Error(data.mensagem || "Falha no login");
+        throw new Error(data.message || data.mensagem || "Falha no login");
       }
 
       const data = await response.json();
-      localStorage.setItem("jwtToken", data.token);
-      navigate("/home")
+      setToken(data.token);
+      navigate("/home");
 
     } catch (error) {
       alert(error.message);

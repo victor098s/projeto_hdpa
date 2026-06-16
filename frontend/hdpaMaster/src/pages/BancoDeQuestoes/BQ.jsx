@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import styles from "./BQ.module.css";
 import {
@@ -15,6 +16,7 @@ import {
   Loader2,
   XCircle,
 } from "lucide-react";
+import { authenticatedFetch } from "../../utils/auth";
 
 const API_URL = "http://localhost:3000/porVest";
 
@@ -27,9 +29,7 @@ function obterTextoApoio(questao) {
   const apoioPorEnunciado = [
     ...textosPorEnunciadoPdf,
     ...textosPorEnunciado,
-  ].find((item) =>
-    questao.enunciado.includes(item.contem),
-  );
+  ].find((item) => questao.enunciado.includes(item.contem));
 
   return apoioPorEnunciado?.apoio || textosDasQuestoes[questao.link];
 }
@@ -54,9 +54,13 @@ function agruparQuestoes(linhas) {
     };
 
     // remove leading letter (e.g., "a) ") from alternative text for display
-    const alternativaTexto = String(linha.enunciado_da_alternativa || "").trim();
+    const alternativaTexto = String(
+      linha.enunciado_da_alternativa || "",
+    ).trim();
     const letraExtraida = extrairLetra(alternativaTexto);
-    const textoSemPrefixo = alternativaTexto.replace(/^([a-eA-E])[).:-]\s*/, "").trim();
+    const textoSemPrefixo = alternativaTexto
+      .replace(/^([a-eA-E])[).:-]\s*/, "")
+      .trim();
 
     questao.alternativas.push({
       texto: textoSemPrefixo || alternativaTexto,
@@ -89,7 +93,7 @@ function agruparQuestoes(linhas) {
 
     const alternativasComLetra = alternativasOrdenadas.map((alt, i) => ({
       ...alt,
-      letra: String.fromCharCode(97 + i), // a, b, c, d, e
+      letra: String.fromCharCode(97 + i),
     }));
 
     return {
@@ -121,13 +125,23 @@ function BQ() {
     assunto3: "",
   });
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     async function buscarQuestoes() {
       try {
-        const resposta = await fetch(API_URL);
-        if (!resposta.ok) {
-          throw new Error("Nao foi possivel buscar as questoes.");
+        const resposta = await authenticatedFetch(API_URL);
+
+        if (resposta.status === 401) {
+          setErro("Sessão expirada. Faça login novamente.");
+          navigate("/");
+          return;
         }
+
+        if (!resposta.ok) {
+          throw new Error("Não foi possível buscar as questões.");
+        }
+
         const resultado = await resposta.json();
         setDados(Array.isArray(resultado) ? resultado : []);
       } catch (error) {
@@ -138,7 +152,7 @@ function BQ() {
     }
 
     buscarQuestoes();
-  }, []);
+  }, [navigate]);
 
   const temas = useMemo(() => opcoesUnicas(dados, "nome_do_tema"), [dados]);
   const bancas = useMemo(
@@ -150,17 +164,17 @@ function BQ() {
     [dados],
   );
 
-const assuntos = useMemo(() => {
-  if (!filtros.tema) {
-    return [];
-  }
-  
-  const dadosFiltradosPorTema = dados.filter(
-    (item) => item.nome_do_tema === filtros.tema
-  );
-  
-  return opcoesUnicas(dadosFiltradosPorTema, "nome_topico");
-}, [dados, filtros.tema]);
+  const assuntos = useMemo(() => {
+    if (!filtros.tema) {
+      return [];
+    }
+
+    const dadosFiltradosPorTema = dados.filter(
+      (item) => item.nome_do_tema === filtros.tema,
+    );
+
+    return opcoesUnicas(dadosFiltradosPorTema, "nome_topico");
+  }, [dados, filtros.tema]);
 
   const questoesFiltradas = useMemo(() => {
     const assuntoSelecionado = [
@@ -204,7 +218,9 @@ const assuntos = useMemo(() => {
   }
 
   function proximaQuestao() {
-    setIndiceAtual((atual) => Math.min(atual + 1, questoesFiltradas.length - 1));
+    setIndiceAtual((atual) =>
+      Math.min(atual + 1, questoesFiltradas.length - 1),
+    );
   }
 
   function questaoAnterior() {
@@ -222,8 +238,8 @@ const assuntos = useMemo(() => {
               <h1>Banco de Questões</h1>
               <p>
                 Aqui você encontra todas as questões disponíveis na plataforma
-                para praticar quando quiser. Explore por disciplinas, assuntos ou
-                dificuldade e responda no seu ritmo.
+                para praticar quando quiser. Explore por disciplinas, assuntos
+                ou dificuldade e responda no seu ritmo.
               </p>
             </div>
 
@@ -299,7 +315,9 @@ const assuntos = useMemo(() => {
                 {["assunto1", "assunto2", "assunto3"].map((campo, index) => (
                   <div key={campo} className={styles.subjectColumn}>
                     <strong>{index + 1}</strong>
-                    <span>Assunto {["primário", "secundário", "terciário"][index]}</span>
+                    <span>
+                      Assunto {["primário", "secundário", "terciário"][index]}
+                    </span>
                     <label className={styles.selectBox}>
                       <ChevronDown size={16} />
                       <select
@@ -426,7 +444,8 @@ const assuntos = useMemo(() => {
                     {questaoAtual.alternativas.map((alternativa) => {
                       const selecionada = respostaAtual === alternativa.letra;
                       const mostrarErrada = selecionada && !alternativa.correta;
-                      const mostrarCorreta = respostaAtual && alternativa.correta && !mostrarErrada;
+                      const mostrarCorreta =
+                        respostaAtual && alternativa.correta && !mostrarErrada;
 
                       return (
                         <button
@@ -449,7 +468,14 @@ const assuntos = useMemo(() => {
                             <Circle size={16} />
                           )}
                           <span>
-                            <strong style={{marginRight:8, textTransform:'lowercase'}}>{alternativa.letra})</strong>
+                            <strong
+                              style={{
+                                marginRight: 8,
+                                textTransform: "lowercase",
+                              }}
+                            >
+                              {alternativa.letra})
+                            </strong>
                             {alternativa.texto}
                           </span>
                         </button>
