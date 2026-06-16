@@ -378,9 +378,43 @@ function BQ() {
     setTela("questoes");
   }
 
-  function responder(questaoId, letra) {
-    setRespostas((estadoAtual) => ({ ...estadoAtual, [questaoId]: letra }));
+function responder(questaoId, letra) {
+  const questao = questoesFiltradas.find(
+    (q) => q.id === questaoId
+  );
+
+  const alternativaCorreta = questao.alternativas.find(
+    (alt) => alt.correta
+  );
+
+  const acertou =
+    alternativaCorreta?.letra === letra;
+
+  const respostasSalvas =
+    JSON.parse(localStorage.getItem("respostas")) || [];
+
+  const jaRespondida = respostasSalvas.some(
+    (r) => r.questaoId === questaoId
+  );
+
+  if (!jaRespondida) {
+    respostasSalvas.push({
+      questaoId,
+      acertou,
+      data: new Date().toISOString(),
+    });
+
+    localStorage.setItem(
+      "respostas",
+      JSON.stringify(respostasSalvas)
+    );
   }
+
+  setRespostas((estadoAtual) => ({
+    ...estadoAtual,
+    [questaoId]: letra,
+  }));
+}
 
   function proximaQuestao() {
     setIndiceAtual((atual) => Math.min(atual + 1, questoesFiltradas.length - 1));
