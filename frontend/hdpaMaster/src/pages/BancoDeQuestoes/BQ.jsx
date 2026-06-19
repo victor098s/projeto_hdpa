@@ -3,11 +3,6 @@ import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import styles from "./BQ.module.css";
 import {
-  textosDasQuestoes,
-  textosPorEnunciado,
-  textosPorEnunciadoPdf,
-} from "./textosQuestoes";
-import {
   ArrowLeft,
   ArrowRight,
   CheckCircle2,
@@ -20,18 +15,14 @@ import { authenticatedFetch } from "../../utils/auth";
 
 const API_URL = "http://localhost:3000/porVest";
 
+// alternativa começa nula para não quebrar o código se nada for passado 
 function extrairLetra(alternativa = "") {
+
+// Remove os espaços em branco com o trim() e usa o match para ver o o padrao das alternativa 
   const match = alternativa.trim().match(/^([a-eA-E])[).:-]/);
+
+//Se for verdade retorna a alternativa, senão vazio 
   return match ? match[1].toLowerCase() : "";
-}
-
-function obterTextoApoio(questao) {
-  const apoioPorEnunciado = [
-    ...textosPorEnunciadoPdf,
-    ...textosPorEnunciado,
-  ].find((item) => questao.enunciado.includes(item.contem));
-
-  return apoioPorEnunciado?.apoio || textosDasQuestoes[questao.link];
 }
 
 function agruparQuestoes(linhas) {
@@ -50,6 +41,7 @@ function agruparQuestoes(linhas) {
       dificuldade: linha.relevancia_da_questao,
       comentario: "",
       link: linha.link,
+      textoApoio: null,
       alternativas: [],
     };
 
@@ -76,6 +68,10 @@ function agruparQuestoes(linhas) {
       questao.comentario = linha.comentario_do_especialista;
     }
 
+    if (!questao.textoApoio && linha.texto) {
+      questao.textoApoio = { texto: linha.texto };
+    }
+
     grupos.set(chave, questao);
   });
 
@@ -100,7 +96,6 @@ function agruparQuestoes(linhas) {
       ...questao,
       numero: index + 1,
       alternativas: alternativasComLetra,
-      textoApoio: obterTextoApoio(questao),
     };
   });
 }
@@ -430,7 +425,9 @@ function BQ() {
 
                   {questaoAtual.textoApoio && (
                     <div className={styles.supportText}>
-                      <span>{questaoAtual.textoApoio.titulo}</span>
+                      {questaoAtual.textoApoio.titulo && (
+                        <span>{questaoAtual.textoApoio.titulo}</span>
+                      )}
                       <p>{questaoAtual.textoApoio.texto}</p>
                       {questaoAtual.textoApoio.fonte && (
                         <small>{questaoAtual.textoApoio.fonte}</small>
