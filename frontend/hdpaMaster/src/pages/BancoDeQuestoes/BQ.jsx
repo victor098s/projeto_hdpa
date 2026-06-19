@@ -26,9 +26,14 @@ function extrairLetra(alternativa = "") {
 }
 
 function agruparQuestoes(linhas) {
+
+// Criar um objeto Map para armazenar as questões 
+
   const grupos = new Map();
 
   linhas.forEach((linha, index) => {
+
+// Criação de chave única  
     const chave = `${linha.link || "sem-link"}-${linha.enunciado_da_questao}`;
     const questao = grupos.get(chave) || {
       id: chave,
@@ -45,22 +50,28 @@ function agruparQuestoes(linhas) {
       alternativas: [],
     };
 
-    // remove leading letter (e.g., "a) ") from alternative text for display
+    // Remover espaços em branco e extrair a letra da alternativa
     const alternativaTexto = String(
       linha.enunciado_da_alternativa || "",
     ).trim();
+
+// Uso da função extrairLetra para pegar a letra da alternativa e remover o prefixo da alternativa
     const letraExtraida = extrairLetra(alternativaTexto);
+
+//Uso da constante textoSemPrefixo para remover o prefixo da alternativa e manter apenas o texto da alternativa 
     const textoSemPrefixo = alternativaTexto
       .replace(/^([a-eA-E])[).:-]\s*/, "")
       .trim();
 
+//Faz um push no array de alternativas da questão, adicionado o texto da alternativa, se é correta ou não, a letra original e o texto cru para depuração 
     questao.alternativas.push({
       texto: textoSemPrefixo || alternativaTexto,
       correta:
         String(linha.validacao || "").toUpperCase() === "S" ||
         String(linha.validacao || "").toUpperCase() === "C",
       originalLetra: letraExtraida || null,
-      // keep raw for debugging if needed
+
+// Mantém o texto cru da alternativa para depuração e referência futura
       rawTexto: alternativaTexto,
     });
 
@@ -75,9 +86,13 @@ function agruparQuestoes(linhas) {
     grupos.set(chave, questao);
   });
 
+// Retorna um array de questões agrupadas, com alternativas ordenadas e letras atribuídas 
   return Array.from(grupos.values()).map((questao, index) => {
-    // If alternatives include an original letter (a-e), sort by that letter.
-    // Otherwise preserve DB insertion order.
+
+// Usa o operador spread para criar uma cópia da questão e ordena as alternativas com base na letra original,
+//  garantindo que as alternativas sejam exibidas na ordem correta, mesmo que a letra original esteja ausente ou fora de ordem.
+// O método sort vai comparar as letras originais das alternativas, depois vai retornar a letra usando a função
+// localeCompare para comparar qual letra vem primeiro. 
     const alternativasOrdenadas = [...questao.alternativas].sort((a, b) => {
       if (a.originalLetra && b.originalLetra) {
         return a.originalLetra.localeCompare(b.originalLetra);
@@ -87,6 +102,8 @@ function agruparQuestoes(linhas) {
       return 0;
     });
 
+//Essa constante vai guardar uma função que vai mapear as alternativas ordenadas e adicionar a letra correspondente (a, b, c, d, e) a cada alternativa.
+// O 97 vem da tabela ASCII, onde 97 é o código para a letra 'a'. A função String.fromCharCode() converte o código ASCII de volta para a letra correspondente. 
     const alternativasComLetra = alternativasOrdenadas.map((alt, i) => ({
       ...alt,
       letra: String.fromCharCode(97 + i),
@@ -100,10 +117,16 @@ function agruparQuestoes(linhas) {
   });
 }
 
+// Recebe um array de objetos,
+// Recebe o nome do campo que queremos extrair,
+// Retorna um array com os valores únicos desse campo, removendo os valores nulos ou vazios.
+
 function opcoesUnicas(dados, campo) {
   return Array.from(new Set(dados.map((item) => item[campo]).filter(Boolean)));
 }
 
+
+// Definições dos useState
 function BQ() {
   const [dados, setDados] = useState([]);
   const [carregando, setCarregando] = useState(true);
