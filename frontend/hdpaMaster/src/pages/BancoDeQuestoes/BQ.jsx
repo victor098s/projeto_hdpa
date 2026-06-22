@@ -3,11 +3,6 @@ import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import styles from "./BQ.module.css";
 import {
-  textosDasQuestoes,
-  textosPorEnunciado,
-  textosPorEnunciadoPdf,
-} from "./textosQuestoes";
-import {
   ArrowLeft,
   ArrowRight,
   CheckCircle2,
@@ -20,24 +15,25 @@ import { authenticatedFetch } from "../../utils/auth";
 
 const API_URL = "http://localhost:3000/porVest";
 
+// alternativa começa nula para não quebrar o código se nada for passado 
 function extrairLetra(alternativa = "") {
+
+// Remove os espaços em branco com o trim() e usa o match para ver o o padrao das alternativa 
   const match = alternativa.trim().match(/^([a-eA-E])[).:-]/);
+
+//Se for verdade retorna a alternativa, senão vazio 
   return match ? match[1].toLowerCase() : "";
 }
 
-function obterTextoApoio(questao) {
-  const apoioPorEnunciado = [
-    ...textosPorEnunciadoPdf,
-    ...textosPorEnunciado,
-  ].find((item) => questao.enunciado.includes(item.contem));
-
-  return apoioPorEnunciado?.apoio || textosDasQuestoes[questao.link];
-}
-
 function agruparQuestoes(linhas) {
+
+// Criar um objeto Map para armazenar as questões 
+
   const grupos = new Map();
 
   linhas.forEach((linha, index) => {
+
+// Criação de chave única  
     const chave = `${linha.link || "sem-link"}-${linha.enunciado_da_questao}`;
     const questao = grupos.get(chave) || {
       id: chave,
@@ -50,25 +46,32 @@ function agruparQuestoes(linhas) {
       dificuldade: linha.relevancia_da_questao,
       comentario: "",
       link: linha.link,
+      textoApoio: null,
       alternativas: [],
     };
 
-    // remove leading letter (e.g., "a) ") from alternative text for display
+    // Remover espaços em branco e extrair a letra da alternativa
     const alternativaTexto = String(
       linha.enunciado_da_alternativa || "",
     ).trim();
+
+// Uso da função extrairLetra para pegar a letra da alternativa e remover o prefixo da alternativa
     const letraExtraida = extrairLetra(alternativaTexto);
+
+//Uso da constante textoSemPrefixo para remover o prefixo da alternativa e manter apenas o texto da alternativa 
     const textoSemPrefixo = alternativaTexto
       .replace(/^([a-eA-E])[).:-]\s*/, "")
       .trim();
 
+//Faz um push no array de alternativas da questão, adicionado o texto da alternativa, se é correta ou não, a letra original e o texto cru para depuração 
     questao.alternativas.push({
       texto: textoSemPrefixo || alternativaTexto,
       correta:
         String(linha.validacao || "").toUpperCase() === "S" ||
         String(linha.validacao || "").toUpperCase() === "C",
       originalLetra: letraExtraida || null,
-      // keep raw for debugging if needed
+
+// Mantém o texto cru da alternativa para depuração e referência futura
       rawTexto: alternativaTexto,
     });
 
@@ -76,12 +79,20 @@ function agruparQuestoes(linhas) {
       questao.comentario = linha.comentario_do_especialista;
     }
 
+    if (!questao.textoApoio && linha.texto) {
+      questao.textoApoio = { texto: linha.texto };
+    }
+
     grupos.set(chave, questao);
   });
 
+// Retorna um array de questões agrupadas, com alternativas ordenadas e letras atribuídas 
   return Array.from(grupos.values()).map((questao, index) => {
-    // If alternatives include an original letter (a-e), sort by that letter.
-    // Otherwise preserve DB insertion order.
+
+// Usa o operador spread para criar uma cópia da questão e ordena as alternativas com base na letra original,
+//  garantindo que as alternativas sejam exibidas na ordem correta, mesmo que a letra original esteja ausente ou fora de ordem.
+// O método sort vai comparar as letras originais das alternativas, depois vai retornar a letra usando a função
+// localeCompare para comparar qual letra vem primeiro. 
     const alternativasOrdenadas = [...questao.alternativas].sort((a, b) => {
       if (a.originalLetra && b.originalLetra) {
         return a.originalLetra.localeCompare(b.originalLetra);
@@ -91,6 +102,8 @@ function agruparQuestoes(linhas) {
       return 0;
     });
 
+//Essa constante vai guardar uma função que vai mapear as alternativas ordenadas e adicionar a letra correspondente (a, b, c, d, e) a cada alternativa.
+// O 97 vem da tabela ASCII, onde 97 é o código para a letra 'a'. A função String.fromCharCode() converte o código ASCII de volta para a letra correspondente. 
     const alternativasComLetra = alternativasOrdenadas.map((alt, i) => ({
       ...alt,
       letra: String.fromCharCode(97 + i),
@@ -100,15 +113,20 @@ function agruparQuestoes(linhas) {
       ...questao,
       numero: index + 1,
       alternativas: alternativasComLetra,
-      textoApoio: obterTextoApoio(questao),
     };
   });
 }
+
+// Recebe um array de objetos,
+// Recebe o nome do campo que queremos extrair,
+// Retorna um array com os valores únicos desse campo, removendo os valores nulos ou vazios.
 
 function opcoesUnicas(dados, campo) {
   return Array.from(new Set(dados.map((item) => item[campo]).filter(Boolean)));
 }
 
+
+// Definições dos useState
 function BQ() {
   const [dados, setDados] = useState([]);
   const [carregando, setCarregando] = useState(true);
@@ -430,7 +448,9 @@ function BQ() {
 
                   {questaoAtual.textoApoio && (
                     <div className={styles.supportText}>
-                      <span>{questaoAtual.textoApoio.titulo}</span>
+                      {questaoAtual.textoApoio.titulo && (
+                        <span>{questaoAtual.textoApoio.titulo}</span>
+                      )}
                       <p>{questaoAtual.textoApoio.texto}</p>
                       {questaoAtual.textoApoio.fonte && (
                         <small>{questaoAtual.textoApoio.fonte}</small>
