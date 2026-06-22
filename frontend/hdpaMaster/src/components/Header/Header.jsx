@@ -14,6 +14,8 @@ import {
 
 function Header() {
   const [menuAberto, setMenuAberto] = useState(false);
+  const [perfilAberto, setPerfilAberto] = useState(false);
+
   const navigate = useNavigate();
 
   const menuToggle = () => {
@@ -28,6 +30,16 @@ function Header() {
   const abrirSimulados = () => {
     window.open(pdfSimulado, "_blank", "noopener,noreferrer");
     setMenuAberto(false);
+  };
+
+  const abrirManual = () => {
+    window.open("/manual.pdf", "_blank");
+    setPerfilAberto(false);
+  };
+
+  const sair = () => {
+    localStorage.clear(); // ou remova apenas o token
+    navigate("/");
   };
 
   return (
@@ -67,9 +79,36 @@ function Header() {
         </button>
       </div>
 
-      <button className={styles.profileButton} type="button">
-        <UserCircle2 size={34} />
-      </button>
+      {/* Perfil */}
+      <div className={styles.profileContainer}>
+        <button
+          className={styles.profileButton}
+          type="button"
+          onClick={() => setPerfilAberto(!perfilAberto)}
+        >
+          <UserCircle2 size={34} />
+        </button>
+
+        {perfilAberto && (
+          <div className={styles.profileMenu}>
+            <span className={styles.profileTitle}>Perfil</span>
+
+            <button
+              className={styles.profileMenuButton}
+              onClick={abrirManual}
+            >
+              Manual do Usuário
+            </button>
+
+            <button
+              className={styles.logoutButton}
+              onClick={sair}
+            >
+              Sair
+            </button>
+          </div>
+        )}
+      </div>
 
       <button className={styles.menuToggle} type="button" onClick={menuToggle}>
         {menuAberto ? <X size={24} /> : <Menu size={24} />}

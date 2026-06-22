@@ -84,6 +84,7 @@ export default function Home() {
     }
   };
 
+
   // Detectar mudanças de tamanho de tela
   useEffect(() => {
     const handleResize = () => {
