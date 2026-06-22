@@ -42,11 +42,14 @@ function Header() {
   const abrirManualDoUsuario = () => {
     window.open(manualDoUsuario, "_blank", "noopener,noreferrer");
     setPerfilAberto(false);
+    setMenuAberto(false);
   };
 
   // Encerra a sessão local e redireciona o usuário para o login.
   const sair = () => {
     localStorage.clear(); // ou remova apenas o token
+    setPerfilAberto(false);
+    setMenuAberto(false);
     navigate("/");
   };
 
@@ -87,6 +90,23 @@ function Header() {
           <BarChart3 size={24} />
           <span>Meu Desempenho</span>
         </button>
+
+        {/* Ações do perfil exibidas dentro do menu hambúrguer em telas de celular. */}
+        <div className={styles.mobileProfileActions}>
+          <span className={styles.mobileProfileTitle}>Perfil</span>
+
+          <button
+            className={styles.profileMenuButton}
+            type="button"
+            onClick={abrirManualDoUsuario}
+          >
+            Manual do Usuário
+          </button>
+
+          <button className={styles.logoutButton} type="button" onClick={sair}>
+            Sair
+          </button>
+        </div>
       </div>
 
       {/* Perfil */}

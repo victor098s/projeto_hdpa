@@ -142,6 +142,18 @@
   background: #c62828;
 }
 
+/* Ações de perfil ficam escondidas no desktop, pois já existem no botão circular. */
+.mobileProfileActions {
+  display: none;
+}
+
+.mobileProfileTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1554ff;
+  text-transform: uppercase;
+}
+
 /* Ajustes responsivos: esconde menu/perfil desktop e mostra menu lateral mobile. */
 @media (max-width: 768px) {
   .header {
@@ -179,6 +191,15 @@
     height: 988px;
     box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.1);
     z-index: 1;
+  }
+
+  .mobileProfileActions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding-top: 18px;
+    border-top: 1px solid #ececec;
   }
 
   .logoImage {
