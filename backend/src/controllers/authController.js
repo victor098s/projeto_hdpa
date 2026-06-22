@@ -27,7 +27,7 @@ async function login(req, res) {
 
     const payload = { email };
     const secret = process.env.CHAVE_JWT;
-    const token = jwt.sign(payload, secret, { expiresIn: "30min" });
+    const token = jwt.sign(payload, password, { expiresIn: "30min" });
 
     res.status(200).json({ token });
   } catch (erro) {
