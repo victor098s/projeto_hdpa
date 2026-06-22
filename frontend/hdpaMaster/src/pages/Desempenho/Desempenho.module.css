@@ -1,76 +1,67 @@
-/* Container principal da página */
 .container {
-  width: 100%; /* ocupa 100% da largura da tela */
-  min-height: 100vh; /* altura mínima igual à altura da tela */
-  background: #f6f6f6; /* define a cor de fundo da página */
+  width: 100%;
+  min-height: 100vh;
+  background: #f6f6f6;
+
+  /* Faz o footer ficar no final da página */
+  display: flex;
+  flex-direction: column;
 }
 
-/* Barra superior cinza */
 .topBar {
-  height: 38px; /* altura fixa da barra */
-  background: #ececec; /* cor de fundo da barra */
+  height: 38px;
+  background: #ececec;
 }
 
-/* Área central onde fica o conteúdo */
 .content {
-  max-width: 1200px; /* largura máxima do conteúdo */
-  margin: 0 auto; /* centraliza horizontalmente */
-  padding: 70px 50px; /* espaçamento interno (cima/baixo e lados) */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 70px 50px;
+  flex: 1;
 }
 
-/* Título principal */
 .content h1 {
-  color: #ababab; /* cor do texto */
-  font-size: 28px; /* tamanho da fonte */
-  font-weight: 700; /* deixa o texto em negrito */
-  margin-bottom: 15px; /* espaço abaixo do título */
+  color: #ababab;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
 }
 
-/* Linha divisória abaixo do título */
 .line {
-  width: 100%; /* ocupa toda a largura disponível */
-  height: 1px; /* espessura da linha */
-  background: #d5d5d5; /* cor da linha */
-  margin-bottom: 50px; /* distância até o próximo elemento */
+  width: 100%;
+  height: 1px;
+  background: #d5d5d5;
+  margin-bottom: 60px;
 }
-
-/* =========================
-   ÁREA DOS CARDS
-========================= */
 
 .cards {
-  display: flex; /* ativa o Flexbox */
-  justify-content: center; /* centraliza os cards horizontalmente */
-  align-items: stretch; /* todos os cards ficam com a mesma altura */
-  gap: 30px; /* espaço entre os cards */
-  flex-wrap: wrap; /* quebra para outra linha se faltar espaço */
-  width: 100%; /* ocupa toda a largura disponível */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 /* =========================
-   CARD GERAL
+   CARD
 ========================= */
 
 .card {
-  width: 260px; /* largura fixa do card */
-  height: 210px; /* altura fixa do card */
-  background: #efefef; /* cor de fundo do card */
-  border-radius: 20px; /* arredonda os cantos */
-  padding: 15px; /* espaçamento interno */
-  box-sizing: border-box; /* inclui padding dentro da largura/altura */
-
-  display: flex; /* ativa Flexbox */
-  flex-direction: column; /* organiza elementos em coluna */
-
-  overflow: hidden; /* impede conteúdo de ultrapassar o card */
+  width: 260px;
+  height: 210px;
+  background: #efefef;
+  border-radius: 20px;
+  padding: 14px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-/* Título de cada card */
 .card h3 {
-  color: #0d4cff; /* cor azul */
-  font-size: 14px; /* tamanho do texto */
-  font-weight: 700; /* negrito */
-  margin: 0 0 12px; /* espaço apenas abaixo do título */
+  color: #0d4cff;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 15px;
 }
 
 /* =========================
@@ -78,21 +69,18 @@
 ========================= */
 
 .card1Content {
-  flex: 1; /* ocupa o espaço restante do card */
-  display: flex; /* ativa Flexbox */
-  justify-content: space-between; /* distribui itens nas extremidades */
-  align-items: center; /* centraliza verticalmente */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 140px;
 }
 
-/* Círculo de progresso */
 .circle {
-  width: 90px; /* largura do círculo */
-  height: 90px; /* altura do círculo */
-  flex-shrink: 0; /* impede que o círculo diminua */
+  width: 95px;
+  height: 95px;
+  flex-shrink: 0;
+  border-radius: 50%;
 
-  border-radius: 50%; /* transforma em círculo */
-
-  /* cria o gráfico circular usando gradientes */
   background:
     radial-gradient(
       closest-side,
@@ -104,175 +92,167 @@
       #c7c7c7 0
     );
 
-  display: flex; /* ativa Flexbox */
-  align-items: center; /* centraliza verticalmente */
-  justify-content: center; /* centraliza horizontalmente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Texto dentro do círculo */
 .circle span {
-  color: #0d4cff; /* cor azul */
-  font-size: 13px; /* tamanho da fonte */
-  font-weight: 700; /* negrito */
+  color: #0d4cff;
+  font-size: 13px;
+  font-weight: 700;
 }
 
-/* Área das informações laterais */
 .info {
-  width: 85px; /* largura fixa */
-  display: flex; /* ativa Flexbox */
-  flex-direction: column; /* elementos em coluna */
-  gap: 12px; /* espaço entre as caixas */
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-/* Caixa de informação */
 .infoBox {
-  width: 100%; /* ocupa toda a largura disponível */
-  height: 42px; /* altura fixa */
-  background: #f8f8f8; /* fundo branco claro */
-  border-radius: 10px; /* bordas arredondadas */
+  width: 80px;
+  height: 40px;
+  background: #f8f8f8;
+  border-radius: 10px;
 
-  display: flex; /* ativa Flexbox */
-  flex-direction: column; /* conteúdo em coluna */
-  justify-content: center; /* centraliza verticalmente */
-  align-items: center; /* centraliza horizontalmente */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Número principal */
 .infoBox strong {
-  font-size: 12px; /* tamanho da fonte */
-  color: #707070; /* cor cinza */
+  font-size: 12px;
+  color: #707070;
 }
 
-/* Texto secundário */
 .infoBox small {
-  font-size: 7px; /* texto pequeno */
-  color: #b3b3b3; /* cinza claro */
-  text-align: center; /* centraliza o texto */
+  font-size: 7px;
+  color: #b3b3b3;
+  text-align: center;
 }
 
 /* =========================
    CARD 2
 ========================= */
 
-/* Área do gráfico de barras */
 .chart {
-  flex: 1; /* ocupa o espaço restante */
-  display: flex; /* ativa Flexbox */
-  flex-direction: column; /* linhas organizadas em coluna */
-  justify-content: center; /* centraliza verticalmente */
-  gap: 10px; /* espaço entre as linhas */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-/* Linha do gráfico */
 .row {
-  display: flex; /* coloca texto e barra lado a lado */
-  align-items: center; /* alinha verticalmente */
-  gap: 8px; /* espaço entre texto e barra */
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-/* Texto ao lado da barra */
 .row span {
-  width: 35px; /* largura fixa */
-  font-size: 12px; /* tamanho da fonte */
-  font-weight: 700; /* negrito */
-  color: #a4a4a4; /* cor cinza */
+  width: 35px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #a4a4a4;
 }
 
-/* Fundo da barra */
 .bar {
-  flex: 1; /* ocupa o espaço restante */
-  height: 24px; /* altura da barra */
+  width: 145px;
+  height: 28px;
 }
 
-/* Parte preenchida da barra */
 .bar div {
-  height: 100%; /* ocupa toda a altura da barra */
-  background: #4f73f8; /* cor azul */
-  border-radius: 4px; /* cantos arredondados */
+  height: 100%;
+  background: #4f73f8;
+  border-radius: 4px;
 }
 
 /* =========================
    CARD 3
 ========================= */
 
-/* Gráfico circular */
 .pie {
-  width: 95px; /* largura */
-  height: 95px; /* altura */
-
-  margin: 0 auto 10px; /* centraliza e adiciona espaço abaixo */
-
-  border-radius: 50%; /* transforma em círculo */
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 10px auto;
+  border-radius: 50%;
 
   background:
     conic-gradient(
       #1c23d8 0deg 47deg,
       #506aff 47deg 360deg
-    ); /* cria gráfico de pizza */
+    );
 }
 
-/* Área da legenda */
 .legend {
-  display: flex; /* ativa Flexbox */
-  flex-direction: column; /* itens em coluna */
-  gap: 6px; /* espaço entre itens */
+  width: 100%;
 }
 
-/* Barras da legenda */
 .acertos,
 .erros {
-  width: 100%; /* largura total */
-  height: 20px; /* altura fixa */
+  width: 150px;
+  height: 18px;
+  margin: 5px auto;
+  border-radius: 20px;
 
-  border-radius: 20px; /* bordas arredondadas */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-  display: flex; /* ativa Flexbox */
-  align-items: center; /* centraliza verticalmente */
-  justify-content: space-between; /* separa os textos */
+  padding: 0 8px;
 
-  padding: 0 10px; /* espaçamento lateral */
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
 
-  color: white; /* texto branco */
-  font-size: 9px; /* tamanho da fonte */
-  font-weight: 700; /* negrito */
-
-  box-sizing: border-box; /* padding incluso no tamanho */
+  box-sizing: border-box;
 }
 
-/* Barra azul clara */
 .acertos {
-  background: #506aff; /* cor dos acertos */
+  background: #506aff;
 }
 
-/* Barra azul escura */
 .erros {
-  background: #1707c5; /* cor dos erros */
+  background: #1707c5;
 }
 
 /* =========================
-   RODAPÉ
+   FOOTER MELHORADO
 ========================= */
 
 .bottomBar {
-  width: 100%; /* ocupa toda a largura */
-  height: 80px; /* altura fixa */
-  background: #0d4cff; /* fundo azul */
-  margin-top: 70px; /* espaço acima do rodapé */
+  width: 100%;
+  height: 90px;
+
+  background: linear-gradient(
+    90deg,
+    #0d4cff,
+    #2b63ff
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+
+  box-shadow: 0 -4px 12px rgba(13, 76, 255, 0.25);
+
+  margin-top: auto;
 }
 
 /* =========================
-   RESPONSIVIDADE
+   RESPONSIVO
 ========================= */
 
 @media (max-width: 1000px) {
-
-  /* diminui o espaçamento lateral em telas menores */
-  .content {
-    padding: 50px 20px;
-  }
-
-  /* mantém os cards centralizados */
   .cards {
     justify-content: center;
+  }
+
+  .content {
+    padding: 50px 20px;
   }
 }
