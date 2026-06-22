@@ -1,11 +1,14 @@
 import styles from "./Desempenho.module.css";
 import Header from "../../components/Header/Header";
 import { useNavigate, Link } from "react-router-dom";
+
+// Página de desempenho com indicadores visuais estáticos de acertos, evolução e erros.
 export default function Desempenho() {
   return (
     <div className={styles.container}>
       <Header />
 
+      {/* Barras visuais que enquadram a área de conteúdo. */}
       <div className={styles.topBar}></div>
 
       <div className={styles.content}>
@@ -14,6 +17,7 @@ export default function Desempenho() {
         <div className={styles.line}></div>
 
         <div className={styles.cards}>
+          {/* Agrupa os três painéis principais do desempenho do estudante. */}
           {/* Card 1 */}
           <div className={styles.card}>
             <h3>TAXA DE ACERTOS</h3>
@@ -41,6 +45,7 @@ export default function Desempenho() {
           <div className={styles.card}>
             <h3>GRÁFICO DE EVOLUÇÃO</h3>
 
+            {/* Cada linha representa um mês, e a largura inline simula o avanço do desempenho. */}
             <div className={styles.chart}>
               <div className={styles.row}>
                 <span>ABR</span>
@@ -76,6 +81,7 @@ export default function Desempenho() {
           <div className={styles.card}>
             <h3>ABRIL</h3>
 
+            {/* O gráfico de pizza é desenhado via CSS usando gradiente cônico. */}
             <div className={styles.pie}></div>
 
             <div className={styles.legend}>
@@ -93,6 +99,7 @@ export default function Desempenho() {
         </div>
       </div>
 
+      {/* Rodapé visual da página. */}
       <div className={styles.bottomBar}></div>
     </div>
   );

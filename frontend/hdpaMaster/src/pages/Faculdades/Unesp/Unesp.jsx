@@ -4,18 +4,22 @@ import Header from "../../../components/Header/Header";
 import Menu from "../../../components/Menu/Menu";
 import unespImg from "../../../assets/Logo_Unesp.svg";
 
+// Página informativa da Unesp, com navegação comum e conteúdo estático.
 function Unesp() {
   return (
     <div className={styles.container}>
+      {/* Mantém o cabeçalho e o menu entre escolas sempre disponíveis. */}
       <Header />
 <Menu />
 
       <main>
+        {/* Área inicial com o título de categoria e a imagem/logo da Unesp. */}
         <div className={styles.escolasUniversitarias}>
           <h2>Escolas universitárias</h2>
         </div>
         <img className={styles.unespImg} src={unespImg} alt="imgUp" />
 
+        {/* Texto principal sobre a universidade e seu processo de ingresso. */}
         <section className={styles.sectionText}>
           <p>
 A Universidade Estadual Paulista, conhecida como Unesp, é uma das maiores e mais importantes universidades 

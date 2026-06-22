@@ -7,18 +7,22 @@ import pucImg from "../../../assets/puc.png";
 
 
 
+// Página informativa da PUC-Campinas, reutilizando a mesma base visual das universidades.
 function Puccamp() {
   return (
     <div className={styles.container}>
+      {/* Header geral e menu de navegação entre escolas. */}
       <Header />
 <Menu />
 
       <main>
+        {/* Identificação da área e logo da instituição exibida. */}
         <div className={styles.escolasUniversitarias}>
           <h2>Escolas universitárias</h2>
         </div>
         <img className={styles.pucImg} src={pucImg} alt="imgUp" />
 
+        {/* Conteúdo descritivo sobre tradição, ingresso e oportunidades da PUC-Campinas. */}
         <section className={styles.sectionText}>
           <p>
 A Pontifícia Universidade Católica de Campinas, conhecida como PUC-CAMP, é uma das instituições privadas de   

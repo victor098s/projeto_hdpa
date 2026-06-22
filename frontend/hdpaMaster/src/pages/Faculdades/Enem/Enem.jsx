@@ -8,15 +8,18 @@ import enemImg from "../../../assets/enem.png";
 function Enem() {
   return (
     <div className={styles.container}>
+      {/* Header e Menu mantêm a navegação padrão das páginas internas. */}
       <Header />
 <Menu />
 
       <main>
+        {/* Bloco superior com título da seção e imagem da instituição/exame. */}
         <div className={styles.escolasUniversitarias}>
           <h2>Escolas universitárias</h2>
         </div>
         <img className={styles.enemImg} src={enemImg} alt="imgUp" />
 
+        {/* Texto informativo apresentado em parágrafos para facilitar a leitura. */}
         <section className={styles.sectionText}>
           <p>
 O Exame Nacional do Ensino Médio, conhecido como ENEM, é uma das principais formas de acesso ao 

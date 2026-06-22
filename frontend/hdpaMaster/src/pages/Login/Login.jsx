@@ -7,11 +7,14 @@ import senhaImg from "../../assets/padlock.png";
 import { useNavigate } from "react-router-dom";
 import { getToken, isTokenExpired, setToken } from "../../utils/auth";
 
+// Tela de autenticação: coleta e-mail/senha, chama a API e salva o token retornado.
 function Login() {
+  // Estados ligados aos inputs do formulário.
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
+  // Se já existir um token válido, evita mostrar o login novamente.
   useEffect(() => {
     const token = getToken();
     if (token && !isTokenExpired(token)) {
@@ -19,9 +22,11 @@ function Login() {
     }
   }, [navigate]);
 
+  // Envia as credenciais para o backend e trata sucesso ou erro de autenticação.
   async function handleLogin(event) {
     event.preventDefault();
 
+    // Validação simples para não chamar a API com campos vazios.
     if (!email || !password) {
       alert("Preencha e-mail e senha.");
       return;
@@ -44,6 +49,7 @@ function Login() {
       navigate("/home");
 
     } catch (error) {
+      // Mostra para o usuário a mensagem enviada pela API ou o erro padrão.
       alert(error.message);
     }
   }
@@ -52,12 +58,14 @@ function Login() {
     <div className={styles.container}>
       <div className={styles.left}></div>
       <div className={styles.right}>
+        {/* Área visual do logo acima do formulário. */}
         <div className={styles.alignLogo}>
           <div className={styles.logo}>
             <img src={logo} alt="logo" />
           </div>
         </div>
 
+        {/* Formulário controlado: cada input atualiza seu respectivo estado. */}
         <form className={styles.LoginBox} id="loginForm" onSubmit={handleLogin}>
           <h2>Acesse a plataforma</h2>
 

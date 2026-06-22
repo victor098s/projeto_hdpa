@@ -1,3 +1,4 @@
+/* Estilos herdados do template/base para componentes de demonstração e estados interativos. */
 .counter {
   font-size: 16px;
   padding: 5px 10px;
@@ -17,6 +18,7 @@
   }
 }
 
+/* Área de hero com elementos posicionados em camadas. */
 .hero {
   position: relative;
 
@@ -56,6 +58,7 @@
   }
 }
 
+/* Centraliza conteúdo verticalmente e ajusta espaçamentos em telas menores. */
 #center {
   display: flex;
   flex-direction: column;
@@ -70,6 +73,7 @@
   }
 }
 
+/* Bloco de próximos passos em duas colunas, adaptando para coluna no mobile. */
 #next-steps {
   display: flex;
   border-top: 1px solid var(--border);
@@ -95,6 +99,7 @@
   }
 }
 
+/* Coluna de documentação com divisória responsiva. */
 #docs {
   border-right: 1px solid var(--border);
 
@@ -104,6 +109,7 @@
   }
 }
 
+/* Lista de links sociais/externos com aparência de botões. */
 #next-steps ul {
   list-style: none;
   padding: 0;
@@ -153,6 +159,7 @@
   }
 }
 
+/* Espaçador visual entre seções. */
 #spacer {
   height: 88px;
   border-top: 1px solid var(--border);
@@ -161,6 +168,7 @@
   }
 }
 
+/* Marcadores triangulares nas extremidades de uma linha. */
 .ticks {
   position: relative;
   width: 100%;

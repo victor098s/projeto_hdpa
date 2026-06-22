@@ -4,20 +4,24 @@ import Header from "../../../components/Header/Header";
 import Menu from "../../../components/Menu/Menu";
 import uspImg from "../../../assets/usp.png";
 
+// Página informativa da USP, composta por navegação padrão, imagem e texto descritivo.
 function Usp() {
 
   return (
     <div className={styles.containerUsp}>
+      {/* Componentes compartilhados para manter navegação consistente entre páginas. */}
       <Header />
       <Menu />
 
       <section className={styles.sectionContentUsp}>
+        {/* Título da área e logo/imagem da universidade. */}
         <div className={styles.escolasUniversitariasUsp}>
           <h2>Escolas universitárias</h2>
         </div>
 
         <img className={styles.uspImg} src={uspImg} alt="imgUsp" />
 
+        {/* Conteúdo textual principal sobre prestígio, pesquisa e ingresso na USP. */}
         <section className={styles.sectionTextUsp}>
           <p>
             A Universidade de São Paulo (USP) é amplamente reconhecida como uma das maiores e mais importantes instituições de ensino superior do Brasil e 

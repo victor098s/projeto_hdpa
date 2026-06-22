@@ -1,3 +1,4 @@
+/* Estrutura principal do cabeçalho fixo no topo das páginas internas. */
 .header {
   width: 100%;
   height: 92px;
@@ -11,6 +12,7 @@
   position: relative;
 }
 
+/* Área da marca: mantém o logo alinhado e com tamanho controlado. */
 .logoArea {
   display: flex;
   align-items: center;
@@ -23,18 +25,21 @@
   display: block;
 }
 
+/* Menu desktop com os atalhos principais da plataforma. */
 .menu {
   display: flex;
   align-items: center;
   gap: 90px;
 }
 
+/* Botão mobile que aparece apenas em telas pequenas. */
 .menuToggle {
   display: none;
   border: none;
   background-color: #ffffff;
 }
 
+/* Botões do menu com ícone em cima e texto abaixo. */
 .menuItem {
   display: flex;
   flex-direction: column;
@@ -54,10 +59,12 @@
   color: #1554ff;
 }
 
+/* Container do perfil usado como referência para posicionar o dropdown. */
 .profileContainer {
   position: relative;
 }
 
+/* Botão circular que abre as opções de perfil. */
 .profileButton {
   width: 52px;
   height: 52px;
@@ -77,6 +84,7 @@
   color: white;
 }
 
+/* Caixa flutuante com ações do perfil. */
 .profileMenu {
   position: absolute;
   top: 65px;
@@ -98,6 +106,7 @@
   color: #000;
 }
 
+/* Botões de ação dentro do dropdown de perfil. */
 .profileMenuButton {
   width: 100%;
   border: none;
@@ -115,6 +124,7 @@
   opacity: 0.9;
 }
 
+/* Ação de saída com cor de alerta para diferenciar do manual. */
 .logoutButton {
   width: 100%;
   border: none;
@@ -132,6 +142,7 @@
   background: #c62828;
 }
 
+/* Ajustes responsivos: esconde menu/perfil desktop e mostra menu lateral mobile. */
 @media (max-width: 768px) {
   .header {
     padding: 0 20px 0px 0px;

@@ -1,7 +1,9 @@
+/* Container da página informativa da USP. */
 .containerUsp {
   background-color: #f3f3f3;
 }
 
+/* Área principal que organiza título, imagem e texto em coluna. */
 .sectionContentUsp {
   margin-top: 2rem;
   display: flex;
@@ -14,6 +16,7 @@ h2 {
   color: #afafaf;
 }
 
+/* Imagem/logo da USP exibida antes do texto. */
 .uspImg {
   width: 320px;
   position: relative;
@@ -23,12 +26,14 @@ h2 {
   margin-left: 4rem;
 }
 
+/* Linha de título da seção de escolas universitárias. */
 .escolasUniversitariasUsp {
   border-bottom: 1px solid #afafaf;
   width: 85%;
   margin-left: 4rem;
 }
 
+/* Bloco textual com largura máxima para leitura no desktop. */
 .sectionTextUsp {
   max-width: 1200px;
   color: #858585;
@@ -45,12 +50,14 @@ h2 {
   text-align: justify;
 }
 
+/* Rodapé visual azul da página. */
 .footerUsp {
   background-color: #0852f5;
   height: 120px;
   color: #0852f5;
 }
 
+/* Ajustes mobile para centralizar conteúdo e reduzir larguras. */
 @media (max-width: 768px) {
   .sectionContentUsp {
     max-width: 768px;

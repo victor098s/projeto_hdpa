@@ -16,6 +16,7 @@ import { authenticatedFetch } from "../../utils/auth";
 const API_URL = "http://localhost:3000/porVest";
 
 // alternativa começa nula para não quebrar o código se nada for passado 
+// Extrai a letra inicial de alternativas no formato "a)", "B.", "c:" ou parecido.
 function extrairLetra(alternativa = "") {
 
 // Remove os espaços em branco com o trim() e usa o match para ver o o padrao das alternativa 
@@ -25,6 +26,7 @@ function extrairLetra(alternativa = "") {
   return match ? match[1].toLowerCase() : "";
 }
 
+// Converte as linhas vindas da API em questões completas com suas alternativas agrupadas.
 function agruparQuestoes(linhas) {
 
 // Criar um objeto Map para armazenar as questões 
@@ -128,6 +130,7 @@ function opcoesUnicas(dados, campo) {
 
 // Definições dos useState
 function BQ() {
+  // Guarda os dados crus da API, estado de carregamento, mensagens e controles da tela atual.
   const [dados, setDados] = useState([]);
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState("");
@@ -145,6 +148,7 @@ function BQ() {
 
   const navigate = useNavigate();
 
+  // Busca as questões quando a página carrega e redireciona se a sessão expirar.
   useEffect(() => {
     async function buscarQuestoes() {
       try {
@@ -172,6 +176,7 @@ function BQ() {
     buscarQuestoes();
   }, [navigate]);
 
+  // Monta opções únicas para os filtros principais sempre que os dados da API mudam.
   const temas = useMemo(() => opcoesUnicas(dados, "nome_do_tema"), [dados]);
   const bancas = useMemo(
     () => ["Todos", ...opcoesUnicas(dados, "nome_do_vestibular")],
@@ -182,6 +187,7 @@ function BQ() {
     [dados],
   );
 
+  // Atualiza a lista de assuntos com base no tema escolhido.
   const assuntos = useMemo(() => {
     if (!filtros.tema) {
       return [];
@@ -194,6 +200,7 @@ function BQ() {
     return opcoesUnicas(dadosFiltradosPorTema, "nome_topico");
   }, [dados, filtros.tema]);
 
+  // Aplica todos os filtros selecionados e transforma as linhas em questões agrupadas.
   const questoesFiltradas = useMemo(() => {
     const assuntoSelecionado = [
       filtros.assunto1,
@@ -218,29 +225,35 @@ function BQ() {
     return agruparQuestoes(linhasFiltradas);
   }, [dados, filtros]);
 
+  // Facilita o acesso à questão exibida e à resposta já marcada nela.
   const questaoAtual = questoesFiltradas[indiceAtual];
   const respostaAtual = questaoAtual ? respostas[questaoAtual.id] : null;
 
+  // Atualiza um campo específico do objeto de filtros preservando os demais.
   function atualizarFiltro(campo, valor) {
     setFiltros((estadoAtual) => ({ ...estadoAtual, [campo]: valor }));
   }
 
+  // Reinicia navegação/respostas e troca da tela de filtros para a tela de questões.
   function filtrarQuestoes() {
     setIndiceAtual(0);
     setRespostas({});
     setTela("questoes");
   }
 
+  // Registra a alternativa escolhida usando o id da questão como chave.
   function responder(questaoId, letra) {
     setRespostas((estadoAtual) => ({ ...estadoAtual, [questaoId]: letra }));
   }
 
+  // Avança para a próxima questão sem ultrapassar o fim da lista filtrada.
   function proximaQuestao() {
     setIndiceAtual((atual) =>
       Math.min(atual + 1, questoesFiltradas.length - 1),
     );
   }
 
+  // Retorna para a questão anterior sem passar do primeiro item.
   function questaoAnterior() {
     setIndiceAtual((atual) => Math.max(atual - 1, 0));
   }

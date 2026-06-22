@@ -11,17 +11,21 @@ import BQ from "./pages/BancoDeQuestoes/BQ";
 import Desempenho from "./pages/Desempenho/Desempenho";
 import { getToken, isTokenExpired, removeToken } from "./utils/auth";
 
+// Protege as rotas internas: só deixa passar se existir um token válido.
 function RequireAuth({ children }) {
   const token = getToken();
 
+  // Se o token não existir ou estiver vencido, limpa o login e volta para a tela inicial.
   if (!token || isTokenExpired(token)) {
     removeToken();
     return <Navigate to="/" replace />;
   }
 
+  // Renderiza o filho direto ou, quando usado como rota pai, libera as rotas aninhadas pelo Outlet.
   return children ? children : <Outlet />;
 }
 
+// Define todas as rotas da aplicação e separa a tela pública das telas autenticadas.
 function App() {
   return (
     <Router>

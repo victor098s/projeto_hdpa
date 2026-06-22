@@ -4,18 +4,22 @@ import Header from "../../../components/Header/Header";
 import Menu from "../../../components/Menu/Menu";
 import unicampImg from "../../../assets/unicamp.png";
 
+// Página informativa da Unicamp, sem estado interno: apenas estrutura e conteúdo.
 function Unicamp() {
   return (
     <div className={styles.container}>
+      {/* Header principal e menu de universidades reaproveitados. */}
       <Header />
  <Menu />
 
       <main>
+        {/* Cabeçalho visual da página com título e imagem da universidade. */}
         <div className={styles.escolasUniversitarias}>
           <h2>Escolas universitárias</h2>
         </div>
         <img className={styles.unicampImg} src={unicampImg} alt="imgUp" />
 
+        {/* Seção de leitura com os parágrafos explicativos sobre a instituição. */}
         <section className={styles.sectionText}>
           <p>
             A Universidade Estadual de Campinas, conhecida como Unicamp, é uma das instituições de ensino superior mais 

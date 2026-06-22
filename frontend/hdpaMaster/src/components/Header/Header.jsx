@@ -13,31 +13,38 @@ import {
   X,
 } from "lucide-react";
 
+// Cabeçalho reutilizado nas páginas internas, com logo, atalhos, perfil e menu mobile.
 function Header() {
+  // Controla a abertura do menu de navegação e do dropdown de perfil.
   const [menuAberto, setMenuAberto] = useState(false);
   const [perfilAberto, setPerfilAberto] = useState(false);
 
   const navigate = useNavigate();
 
+  // Alterna a visibilidade do menu em telas menores.
   const menuToggle = () => {
     setMenuAberto((aberto) => !aberto);
   };
 
+  // Navega para uma rota interna e fecha o menu para evitar que ele fique aberto no destino.
   const irPara = (rota) => {
     navigate(rota);
     setMenuAberto(false);
   };
 
+  // Abre o PDF de simulados em uma nova aba do navegador.
   const abrirSimulados = () => {
     window.open(pdfSimulado, "_blank", "noopener,noreferrer");
     setMenuAberto(false);
   };
 
+  // Abre o manual do usuário e fecha o dropdown de perfil.
   const abrirManualDoUsuario = () => {
     window.open(manualDoUsuario, "_blank", "noopener,noreferrer");
     setPerfilAberto(false);
   };
 
+  // Encerra a sessão local e redireciona o usuário para o login.
   const sair = () => {
     localStorage.clear(); // ou remova apenas o token
     navigate("/");
@@ -47,10 +54,12 @@ function Header() {
     <header className={styles.header}>
       <div className={styles.logoArea}>
         <Link to="/home">
+          {/* Logo também funciona como atalho para retornar à página inicial autenticada. */}
           <img src={logoImage} alt="Logo" className={styles.logoImage} />
         </Link>
       </div>
 
+      {/* Menu principal com ações de estudo e desempenho. */}
       <div className={menuAberto ? styles.menuAberto : styles.menu}>
         <button
           className={styles.menuItem}
@@ -91,6 +100,7 @@ function Header() {
         </button>
 
         {perfilAberto && (
+          // Dropdown exibido apenas quando o usuário clica no ícone de perfil.
           <div className={styles.profileMenu}>
             <span className={styles.profileTitle}>Perfil</span>
 
@@ -108,6 +118,7 @@ function Header() {
         )}
       </div>
 
+      {/* Botão hambúrguer troca entre abrir e fechar o menu responsivo. */}
       <button className={styles.menuToggle} type="button" onClick={menuToggle}>
         {menuAberto ? <X size={24} /> : <Menu size={24} />}
       </button>

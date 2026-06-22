@@ -39,6 +39,7 @@ export default function Home() {
   const [perfilAberto, setPerfilAberto] = useState(false);
   const navigate = useNavigate();
 
+  // Lista central dos cards do carrossel; cada item define nome, logo e rota de destino.
   const universityCards = [
     { nome: "ENEM", logo: enemLogo, path: "/enem" },
     { nome: "USP", logo: uspLogo, path: "/usp" },
@@ -54,29 +55,35 @@ export default function Home() {
     currentSlide + cardsToShow,
   );
 
+  // Atalho para abrir a tela do Banco de Questões.
   const irParaBancoDeQuestoes = () => {
     navigate("/bq");
   };
 
+  // Atalho para abrir a tela de desempenho do usuário.
   const irParaDesempenho = () => {
     navigate("/desempenho");
   };
 
+  // Abre o PDF de simulados em uma nova aba para não tirar o usuário da página inicial.
   const irParaSimulado = () => {
     window.open(pdfSimulado, "_blank", "noopener,noreferrer");
   };
 
+  // Abre o manual do usuário e fecha o menu de perfil após a ação.
   const abrirManualDoUsuario = () => {
     window.open(manualDoUsuario, "_blank", "noopener,noreferrer");
     setPerfilAberto(false);
   };
 
+  // Avança o carrossel sem deixar o índice passar do último grupo visível.
   const nextSlide = () => {
     if (currentSlide < universityCards.length - cardsToShow) {
       setCurrentSlide(currentSlide + 1);
     }
   };
 
+  // Volta o carrossel sem permitir índice negativo.
   const prevSlide = () => {
     if (currentSlide > 0) {
       setCurrentSlide(currentSlide - 1);
@@ -93,6 +100,7 @@ export default function Home() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Ao clicar em um card, redireciona para a página informativa correspondente.
   const handleUniversityClick = (path) => {
     navigate(path);
   };

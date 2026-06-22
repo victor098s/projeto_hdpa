@@ -1,7 +1,9 @@
+/* Container da página informativa da Unicamp. */
 .container {
   background-color: #f3f3f3;
 }
 
+/* Área principal que centraliza imagem e texto em coluna. */
 main {
   padding-left: 5rem;
   margin-top: 2rem;
@@ -14,6 +16,7 @@ h2 {
   color: #afafaf;
 }
 
+/* Imagem/logo da Unicamp exibida antes do conteúdo textual. */
 .unicampImg {
   width: 320px;
   position: relative;
@@ -22,11 +25,13 @@ h2 {
   margin-bottom: 2rem;
 }
 
+/* Linha de título da seção de escolas universitárias. */
 .escolasUniversitarias {
   border-bottom: 1px solid #afafaf;
   width: 85%;
 }
 
+/* Bloco do texto informativo com largura de leitura no desktop. */
 .sectionText {
   width: 1200px;
   color: #858585;
@@ -42,12 +47,14 @@ h2 {
   text-align: justify;
 }
 
+/* Rodapé visual azul usado no fim da página. */
 footer {
   background-color: #0852f5;
   height: 120px;
   color: #0852f5;
 }
 
+/* Ajustes mobile para reduzir largura, reposicionar imagem e compactar rodapé. */
 @media (max-width: 768px) {
   main {
     padding: 0px;
