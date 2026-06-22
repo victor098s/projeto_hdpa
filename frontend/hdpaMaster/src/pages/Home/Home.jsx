@@ -14,7 +14,7 @@ import unespLogo from "../../assets/Logo_Unesp.svg";
 import pucLogo from "../../assets/puc.png";
 import tupiImage from "../../assets/tupi.png";
 import Enem from "../Faculdades/Enem/Enem";
-
+import Header from "../../components/Header/Header";
 // Importação dos componentes das páginas internas de cada faculdade
 import Usp from "../Faculdades/Usp/Usp";
 import Unicamp from "../Faculdades/Unicamp/Unicamp";
@@ -23,7 +23,6 @@ import Puccamp from "../Faculdades/Puccamp/Puccamp";
 
 // Importação de ícones vetoriais da biblioteca lucide-react
 import pdfSimulado from "../../assets/SIMULADOS.pdf";
-import manualDoUsuario from "../../assets/MANUAL DO USUÁRIO.pdf";
 import {
   BookOpen,
   ClipboardPen,
@@ -84,7 +83,6 @@ export default function Home() {
     }
   };
 
-
   // Detectar mudanças de tamanho de tela
   useEffect(() => {
     const handleResize = () => {
@@ -102,52 +100,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       {/* Cabeçalho principal com logo, links do menu superior e botão de perfil */}
-      <header className={styles.header}>
-        <div className={styles.logoArea}>
-          <img
-            src={logoImage}
-            alt="Logo"
-            className={styles.logoImage}
-            onClick={() => navigate("/home")}
-          />
-        </div>
-
-        <div className={styles.menu}>
-          <div className={styles.menuItem} onClick={irParaBancoDeQuestoes}>
-            <BookOpen size={24} />
-            <span onClick={irParaBancoDeQuestoes}>Banco de Questões</span>
-          </div>
-
-          <div className={styles.menuItem} onClick={irParaSimulado}>
-            <ClipboardPen size={24} />
-            <span>Simulados</span>
-          </div>
-
-          <div className={styles.menuItem} onClick={irParaDesempenho}>
-            <BarChart3 size={24} />
-            <span onClick={irParaDesempenho}>Meu Desempenho</span>
-          </div>
-        </div>
-
-        <div className={styles.profileArea}>
-          <button
-            className={styles.profileButton}
-            type="button"
-            onClick={() => setPerfilAberto((aberto) => !aberto)}
-          >
-            <UserCircle2 size={34} />
-          </button>
-
-          {perfilAberto && (
-            <div className={styles.profileBox}>
-              <span>Perfil</span>
-              <button type="button" onClick={abrirManualDoUsuario}>
-                Manual do Usuário
-              </button>
-            </div>
-          )}
-        </div>
-      </header>
+      <Header />
 
       {/* Seção Hero: Banner de destaque da página inicial */}
       <section className={styles.hero}>

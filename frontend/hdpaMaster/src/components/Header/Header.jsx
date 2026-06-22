@@ -1,5 +1,6 @@
 import logoImage from "../../assets/logo.png";
 import pdfSimulado from "../../assets/SIMULADOS.pdf";
+import manualDoUsuario from "../../assets/MANUAL DO USUÁRIO.pdf";
 import styles from "./Header.module.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -32,8 +33,8 @@ function Header() {
     setMenuAberto(false);
   };
 
-  const abrirManual = () => {
-    window.open("/manual.pdf", "_blank");
+  const abrirManualDoUsuario = () => {
+    window.open(manualDoUsuario, "_blank", "noopener,noreferrer");
     setPerfilAberto(false);
   };
 
@@ -95,15 +96,12 @@ function Header() {
 
             <button
               className={styles.profileMenuButton}
-              onClick={abrirManual}
+              onClick={abrirManualDoUsuario}
             >
               Manual do Usuário
             </button>
 
-            <button
-              className={styles.logoutButton}
-              onClick={sair}
-            >
+            <button className={styles.logoutButton} onClick={sair}>
               Sair
             </button>
           </div>
