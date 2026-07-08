@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 // Importações de estilização (CSS Modules) e arquivos de imagens/logos locais
-import styles from "./home.module.css";
+import styles from "./Home.module.css";
 import logoImage from "../../assets/logo.png";
 import banner from "../../assets/banner2.png";
 import enemLogo from "../../assets/enem.png";
