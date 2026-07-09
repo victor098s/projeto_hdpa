@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { authenticatedFetch } from "../../utils/auth";
 
-const API_URL = "http://localhost:3000/porVest";
+const API_URL = " https://projeto-hdpa-1.onrender.com/porVest";
 
 // alternativa começa nula para não quebrar o código se nada for passado 
 // Extrai a letra inicial de alternativas no formato "a)", "B.", "c:" ou parecido.
