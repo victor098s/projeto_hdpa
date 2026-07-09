@@ -32,6 +32,9 @@ function Login() {
       return;
     }
 
+// Fiz a alteração da URL para a versão que foi hospedada o bcakend
+
+
     try {
       const response = await fetch("https://project-hdpavictor098s.onrender.com/auth/login", {
         method: "POST",

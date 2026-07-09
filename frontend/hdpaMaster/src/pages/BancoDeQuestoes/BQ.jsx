@@ -13,6 +13,10 @@ import {
 } from "lucide-react";
 import { authenticatedFetch } from "../../utils/auth";
 
+
+// Fiz a alteração da URL para a versão que foi hospedada o bcakend
+
+
 const API_URL = "https://project-hdpavictor098s.onrender.com/porVest";
 
 // alternativa começa nula para não quebrar o código se nada for passado 
